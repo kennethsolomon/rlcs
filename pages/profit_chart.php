@@ -171,7 +171,13 @@ require_once('auth.php');
             }
      
  ?>
-                        <p> Sales Charts According to Product Category</p>
+                        <p> Monthly Profit Chart</p>
+                        <?php 
+                        if(isset($_POST["eyear"])){
+                            $dyear=$_POST["eyear"];
+                            echo '<center><h1>'.$dyear.'</h1></center>';
+                        }
+                        ?>
                       <canvas id="bar-chart" width="800" height="450"></canvas> 
                         <script>
                         // Bar chart
@@ -181,7 +187,7 @@ require_once('auth.php');
                             labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                             datasets: [
                                 {
-                                label: "Employee Salary",
+                                label: "Profit Chart",
                                 backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#e8c3b9","#c45850"],
                                 data: [<?php echo $jan ?>, <?php echo $feb ?>, <?php echo $mar ?>, <?php echo $april ?>, <?php echo $may ?>, <?php echo $jun ?>, <?php echo $jul ?>, <?php echo $aug ?>, <?php echo $sept ?>, <?php echo $oct ?>, <?php echo $nov ?>, <?php echo $dec ?>]
                                 }
@@ -198,15 +204,15 @@ require_once('auth.php');
                         </script>   
                     </div>
                 <!-- <a href="javascript:Clickheretoprint()" style="font-size:15px"; class="btn btn-primary"><i class="fa fa-print"></i>Print</a> -->
-                <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
-                            Print
-                        </button>
-                        <div class="clearfix"></div>
-<script>
+                <script>
            function myFunction() {
                window.print();
            }
        </script>
+       <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+       <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
+                            Print
+                        </button> 
                 </div>  </div>
             </div>
             

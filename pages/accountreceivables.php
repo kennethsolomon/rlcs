@@ -41,7 +41,7 @@ require_once('auth.php');
     <link rel="stylesheet" type="text/css" href="tcal.css" />
     
     <script type="text/javascript" src="tcal.js"></script>
-
+  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -61,7 +61,6 @@ require_once('auth.php');
           })
         })
     </script>
-
 
 </head>
 
@@ -118,12 +117,12 @@ require_once('auth.php');
                     <table border="1" cellpadding="5" width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th > Transaction ID </th>
-                                <th > Date </th>
-                                <th > Customer Name </th>
-                                <th > Invoice Number </th>
-                                <th > Overall Balance </th>
-                                <th > Due Date </th>
+                                 <th class="thColor"> Transaction ID </th>
+                                <th> Date </th>
+                                <th> Customer Name </th>
+                                <th> Invoice Number </th>
+                                <th> Overall Balance </th>
+                                <th> Due Date </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -239,7 +238,7 @@ require_once('auth.php');
                             <!-- TOTAL -->
                             <thead>
                                 <tr>
-                                    <th colspan="4" style="border-top:1px solid #999999"> Total </th>
+                                    <th colspan="4" style="border-top:1px solid #999999" > Total </th>
                                     <th colspan="3" style="border-top:1px solid #999999"> 
                                         <?php
                                         if(isset($_POST["submitdate"]))

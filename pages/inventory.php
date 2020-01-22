@@ -105,7 +105,7 @@ require_once('auth.php');
                     <thead>
                         <tr>
                             <th class="hidden"> Id </th>
-                            <th width="10%"> Invoice </th>
+                            <th width="10%"> Transaction Number </th>
                             <th> Product Code </th>
                             <th> Brand Name </th>
                             <th> Description Name </th>

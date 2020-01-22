@@ -111,7 +111,7 @@ require_once('auth.php');
                                 <th > Transaction ID </th>
                                 <th > Date </th>
                                 <th > Customer Name </th>
-                                <th > Invoice Number </th>
+                                <th > Transaction Number </th>
                                 <th > Type of Payment </th>
                                 <th > Total Sales </th>
                                 <th > Balance </th>

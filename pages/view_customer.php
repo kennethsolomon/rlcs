@@ -73,7 +73,7 @@ require_once('auth.php');
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th > Invoice Number </th>
+                                <th > Transaction Number </th>
                                 <th > Customer Name </th>
                                 <th > Balance </th>
                                 <th > Due Date </th>

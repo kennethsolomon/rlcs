@@ -193,9 +193,9 @@ require_once('auth.php');
 
 <div class = "pull-right">
 
-<button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
+<!-- <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
         Print
-    </button>
+    </button> -->
 </div>
 <!-- /.container-fluid -->
 </div>

@@ -68,7 +68,7 @@ require_once('auth.php');
             <div class="row">
                 <div class="col-lg-12">
                 <img src="rlcs.png" alt="Smiley face" height="70" width="100%" style="text-align:right; margin-top:10px">
-                    <h1 class="page-header"> Sales Report</h1>
+                    <h1 class="page-header"> Profit  Report</h1>
                 </div>
                 <div id="maintable">
                     <div style="margin-top: -19px; margin-bottom: 21px;">
@@ -140,7 +140,7 @@ require_once('auth.php');
                                 echo $cmonth.' '.$cyear;
                                 echo'</p></center>';
                                 if(!empty($cmonth) && !empty($cyear)){
-                                    $result = $db->prepare("SELECT * FROM sales WHERE month = '$cmonth' AND year = '$cyear' ORDER BY transaction_id desc");
+                                    $result = $db->prepare("SELECT * FROM sales WHERE month = '$cmonth' AND year = '$cyear' AND balance = 0 ORDER BY transaction_id desc");
                                     $result->execute();
                                     for($i=0; $row = $result->fetch(); $i++){
                                         ?>
@@ -155,7 +155,7 @@ require_once('auth.php');
                                         }
 
                                   } else if (!empty($cmonth)){
-                                    $result = $db->prepare("SELECT * FROM sales WHERE month = '$cmonth' ORDER BY transaction_id desc");
+                                    $result = $db->prepare("SELECT * FROM sales WHERE month = '$cmonth' AND balance = 0 ORDER BY transaction_id desc");
                                     $result->execute();
                                     for($i=0; $row = $result->fetch(); $i++){
                                         ?>
@@ -169,7 +169,7 @@ require_once('auth.php');
                                         <?php
                                         }
                                  } else if (!empty($cyear)){
-                                    $result = $db->prepare("SELECT * FROM sales WHERE year = '$cyear'  ORDER BY transaction_id desc");
+                                    $result = $db->prepare("SELECT * FROM sales WHERE year = '$cyear' AND balance = 0  ORDER BY transaction_id desc");
                                     $result->execute();
                                     for($i=0; $row = $result->fetch(); $i++){
                                         ?>
@@ -183,7 +183,7 @@ require_once('auth.php');
                                         <?php
                                         }
                                  } else if (empty($cmonth) && empty($cyear)){
-                                    $result = $db->prepare("SELECT * FROM sales ORDER BY transaction_id desc");
+                                    $result = $db->prepare("SELECT * FROM sales  WHERE balance = 0  ORDER BY transaction_id desc");
                                     $result->execute();
                                     for($i=0; $row = $result->fetch(); $i++){
                                         ?>
@@ -223,7 +223,7 @@ require_once('auth.php');
                                 echo $dailydate;
                                 echo'</p></center>';
                                 if(!empty($dailydate)){
-                                    $result = $db->prepare("SELECT * FROM sales WHERE date = '$dailydate' ORDER BY transaction_id desc");
+                                    $result = $db->prepare("SELECT * FROM sales WHERE date = '$dailydate' AND balance = 0 ORDER BY transaction_id desc");
                                     $result->execute();
                                     for($i=0; $row = $result->fetch(); $i++){
                                         ?>
@@ -252,14 +252,14 @@ require_once('auth.php');
                                         $cmonth=$_POST["cmonth"];
                                         $cyear=$_POST["cyear"];
                                         if(!empty($cmonth) && !empty($cyear)){
-                                                $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' AND year = '$cyear'");
+                                                $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' AND year = '$cyear' AND balance = 0");
                                                 $results->execute();
                                                 for($i=0; $rows = $results->fetch(); $i++){
                                                 $dsdsd=$rows['sum(profit)'];
                                                 echo formatMoney($dsdsd, true);
                                            }
                                         } else if(!empty($cmonth)){
-                                                $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth'");
+                                                $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' AND balance = 0");
                                                 $results->execute();
                                                 for($i=0; $rows = $results->fetch(); $i++){
                                                 $dsdsd=$rows['sum(profit)'];
@@ -268,7 +268,7 @@ require_once('auth.php');
                                            
                                         } else if(!empty($cyear)){
 
-                                                $results = $db->prepare("SELECT sum(profit) FROM purchases WHERE year = '$cyear'");
+                                                $results = $db->prepare("SELECT sum(profit) FROM purchases WHERE year = '$cyear' AND balance = 0");
                                                 $results->execute();
                                                 for($i=0; $rows = $results->fetch(); $i++){
                                                 $dsdsd=$rows['sum(profit)'];
@@ -277,7 +277,7 @@ require_once('auth.php');
 
 
                                         } else if(empty($cmonth) && empty($cyear)){
-                                            $results = $db->prepare("SELECT sum(profit) FROM sales");
+                                            $results = $db->prepare("SELECT sum(profit) FROM sales WHERE balance = 0");
                                             $results->execute();
                                             for($i=0; $rows = $results->fetch(); $i++){
                                             $dsdsd=$rows['sum(profit)'];
@@ -292,7 +292,7 @@ require_once('auth.php');
                                 {
                                     $dailydate = $_POST['dailydate'];
                                     if(!empty($dailydate)){
-                                        $results = $db->prepare("SELECT sum(profit) FROM sales WHERE date = '$dailydate'");
+                                        $results = $db->prepare("SELECT sum(profit) FROM sales WHERE date = '$dailydate' AND balance = 0");
                                         $results->execute();
                                         for($i=0; $rows = $results->fetch(); $i++){
                                         $dsdsd=$rows['sum(profit)'];
@@ -315,28 +315,28 @@ require_once('auth.php');
                                         $cmonth=$_POST["cmonth"];
                                         $cyear=$_POST["cyear"];
                                         if(!empty($cmonth) && !empty($cyear)){
-                                                $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' AND year = '$cyear' ");
+                                                $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' AND year = '$cyear' AND balance = 0");
                                                 $results->execute();
                                                 for($i=0; $rows = $results->fetch(); $i++){
                                                 $dsdsd=$rows['sum(profit)'];
                                                 echo formatMoney($dsdsd, true);
                                            }
                                         } else if(!empty($cmonth)){
-                                            $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' ");
+                                            $results = $db->prepare("SELECT sum(profit) FROM sales WHERE month = '$cmonth' AND balance = 0");
                                                 $results->execute();
                                                 for($i=0; $rows = $results->fetch(); $i++){
                                                 $dsdsd=$rows['sum(profit)'];
                                                 echo formatMoney($dsdsd, true);
                                            }
                                         } else if(!empty($cyear)){
-                                            $results = $db->prepare("SELECT sum(profit) FROM sales WHERE year = '$cyear' ");
+                                            $results = $db->prepare("SELECT sum(profit) FROM sales WHERE year = '$cyear' AND balance = 0");
                                                 $results->execute();
                                                 for($i=0; $rows = $results->fetch(); $i++){
                                                 $dsdsd=$rows['sum(profit)'];
                                                 echo formatMoney($dsdsd, true);
                                            }
                                         } else if(empty($cmonth) && empty($cyear)){
-                                            $results = $db->prepare("SELECT sum(profit) FROM sales");
+                                            $results = $db->prepare("SELECT sum(profit) FROM sales WHERE balance = 0");
                                             $results->execute();
                                             for($i=0; $rows = $results->fetch(); $i++){
                                             $dsdsd=$rows['sum(profit)'];
@@ -350,7 +350,7 @@ require_once('auth.php');
                                 {
                                     $dailydate = $_POST['dailydate'];
                                     if(!empty($dailydate)){
-                                        $results = $db->prepare("SELECT sum(profit) FROM sales WHERE date = '$dailydate'");
+                                        $results = $db->prepare("SELECT sum(profit) FROM sales WHERE date = '$dailydate' AND balance = 0");
                                         $results->execute();
                                         for($i=0; $rows = $results->fetch(); $i++){
                                         $dsdsd=$rows['sum(profit)'];

@@ -118,12 +118,12 @@ require_once('auth.php');
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th > Invoice Number </th>
+                            <th > Transaction Number </th>
                             <th > Product Code </th>
                             <th > Brand Name </th>
                             <th > Description Name </th>
                             <th > Status </th>
-                            <th > Remarks </th>
+                            <!-- <th > Remarks </th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -176,8 +176,8 @@ require_once('auth.php');
                                     }
                                     ?></td>
                                     <td><?php echo $row['status']; ?></td>
-                                    <td><?php echo $row['remark']; ?></td>
-    
+                                    <!-- <td><?php echo $row['remark']; ?></td>
+     -->
                                 </tr>
                                 <?php
                                 }
@@ -231,7 +231,7 @@ require_once('auth.php');
                                     }
                                     ?></td>
                                     <td><?php echo $row['status']; ?></td>
-                                    <td><?php echo $row['remark']; ?></td>
+                                    <!-- <td><?php echo $row['remark']; ?></td> -->
     
                                 </tr>
                                 <?php
@@ -263,7 +263,7 @@ require_once('auth.php');
                                     }
                                     ?></td>
                                     <td><?php echo $row['status']; ?></td>
-                                    <td><?php echo $row['remark']; ?></td>
+                                    <!-- <td><?php echo $row['remark']; ?></td> -->
     
                                 </tr>
                                 <?php
@@ -295,7 +295,7 @@ require_once('auth.php');
                                         }
                                         ?></td>
                                         <td><?php echo $row['status']; ?></td>
-                                        <td><?php echo $row['remark']; ?></td>
+                                        <!-- <td><?php echo $row['remark']; ?></td> -->
         
                                     </tr>
                                     <?php
@@ -327,7 +327,7 @@ require_once('auth.php');
                                         }
                                         ?></td>
                                         <td><?php echo $row['status']; ?></td>
-                                        <td><?php echo $row['remark']; ?></td>
+                                        <!-- <td><?php echo $row['remark']; ?></td> -->
         
                                     </tr>
                                     <?php

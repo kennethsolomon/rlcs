@@ -30,7 +30,7 @@
                             <option>Per Kilo</option>
                             </select>
                             <span>Cost : </span><input type="number" name="cost" class = "form-control" />
-                            <span>SRP : </span><input type="number" name="price"  class = "form-control" />
+                            <span>SRP : </span><input type="number" name="price" step="0.01"  class = "form-control" />
                             <span>Supplier : </span>
                             <select name="supplier" class = "form-control">
                                 <?php

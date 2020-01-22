@@ -88,7 +88,7 @@ $finalcode='RS-'.createRandomPassword();
 					</li>
 
 					<li>
-						<a rel="facebox" href="select_customer.php"><i class="fa fa-book fa-fw"></i> Customer Ledger</a>
+						<a rel="facebox" href="select_customer.php"><i class="fa fa-book fa-fw"></i> Client/Project Ledger</a>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-files-o fa-fw"></i> REPORTS<span class="fa arrow"></span></a>
@@ -98,6 +98,9 @@ $finalcode='RS-'.createRandomPassword();
 							</li>
 							<li>
 								<a  href="account_payable.php"> Accounts Payables Report</a>
+							</li>
+							<li>
+								<a  href="other_expenses_report.php"> Other Expenses Report</a>
 							</li>
 							<li>
 								<a href="collection.php">Collection Report</a>
@@ -126,7 +129,6 @@ $finalcode='RS-'.createRandomPassword();
 							<li>
 								<a  href="profit.php"> Profit</a>
 							</li>
-							
 						</ul>
 					</li>
 					<li>
@@ -155,6 +157,9 @@ $finalcode='RS-'.createRandomPassword();
 							</li>
 							<li>
 								<a href="cost_chart.php"> Cost Chart</a>
+							</li>
+							<li>
+								<a href="other_expenses_chart.php"> Other Expenses Chart </a>
 							</li>
 						</ul>
 					</li>

@@ -90,34 +90,6 @@ require_once('auth.php');
                             $amount=$rowa['total_amount'];
                             echo '<font style = "color:red"><h3>Remarks : '.$rowa['due_date'].'</h3></font><br> ';
                         }
-                        // $results2 = $db->prepare("SELECT * FROM customer WHERE membership_number !='' ");
-                        // // $resultas->bindParam(':b', $name);
-                        // $results2->execute();
-                        // // for($i=0; $rowas = $resultas->fetch(); $i++){
-                        // //     echo 'Name : '.$rowas['customer_name'].'<br>';
-                        // //     echo 'Address : '.$rowas['address'].'<br>';
-                        // //     echo 'Contact : '.$rowas['contact'].'<br>';
-                        // // }
-
-                        // // $resultas = $db->prepare("SELECT * FROM customer WHERE customer_name= :b");
-                        // // $resultas->bindParam(':b', $name);
-                        // // $resultas->execute();
-                        // for($i=0; $rowas = $results2->fetch(); $i++){
-                        //     echo 'Name : '.$rowas['customer_name'].'<br>';
-                        //     echo 'Address : '.$rowas['address'].'<br>';
-                        //     echo 'Contact : '.$rowas['contact'].'<br>';
-                        // }
-
-                        //Second Query
-                        // $tftft=$_GET['cname'];
-                        // $resultb = $db->prepare("SELECT * FROM sales WHERE invoice_number= :a");
-                        // $resultb->bindParam(':a', $tftft);
-                        // $resultb->execute();
-                        // for($i=0; $rowa = $resultb->fetch(); $i++){
-                        //     $name=$rowa['name'];
-                        //     $amount=$rowa['total_amount'];
-                        //     echo '<font style = "color:red"><h3>Due Date: '.$rowa['due_date'].'</h3></font><br> ';
-                        // }
                         $resultas2 = $db->prepare("SELECT * FROM sales WHERE name= :b && invoice_number= :c ");
                         $resultas2->bindParam(':b', $name);
                         $resultas2->bindParam(':c', $tftft);
@@ -134,7 +106,7 @@ require_once('auth.php');
                                 <tr>
                                     <th> Transaction ID </th>
                                     <th> Date </th>
-                                    <th> Invoice Number </th>
+                                    <th> Transaction Number </th>
                                     <th> Payment </th>
                                     <th> Balance </th>
                                     <th> Total Ammount Due </th>                                    

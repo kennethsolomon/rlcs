@@ -64,7 +64,7 @@ require_once('auth.php');
   $supplier=$_GET['supplier'];
   ?>
   <img src="rlcs.png" alt="Smiley face" height="70" width="1150" style="text-align:right; margin-top:10px">
-  <h1><?php echo $supplier;  ?>'s  PURCHASE ORDER FORM </h1>
+  <h3><?php echo $supplier;  ?>'s  PURCHASE ORDER FORM </h3>
   <div>
     <?php
     $id=$_GET['id'];

@@ -56,7 +56,7 @@ require_once('auth.php');
     </script>
 
 
-    <script language="javascript">
+    <!-- <script language="javascript">
         function Clickheretoprint()
         { 
           var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
@@ -71,7 +71,7 @@ require_once('auth.php');
         //   docprint.document.close(); 
         //   docprint.focus(); 
       }
-  </script>
+  </script> -->
  
 </head>
 
@@ -86,89 +86,98 @@ require_once('auth.php');
                 
               
                 <div class="content" id="content">
+
+            <form action="" method="post">
+                <label><input name="eyear" id="eyear" type="number" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
+                <label><button class="form-control" type="submitBtn" name="submitBtn" >Submit</button></label>
+            </form>
+                
             <?php 
-
-
-
-    include('connect.php'); 
-    $dyear=$_GET["eyear"];
-    $project = $_GET["id"];
-    $januaryq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'January'AND year = '$dyear'");
-    $januaryq->execute();
-    for($i=0; $rows = $januaryq->fetch(); $i++){
-       $janr=$rows['sum(amount)'];
-    }
-    $februaryq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'February'AND year = '$dyear' ");
-    $februaryq->execute();
-    for($i=0; $rows = $februaryq->fetch(); $i++){
-       $febr=$rows['sum(amount)'];
-    }
-    $marchq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'March'AND year = '$dyear' ");
-    $marchq->execute();
-    for($i=0; $rows = $marchq->fetch(); $i++){
-       $marr=$rows['sum(amount)'];
-    }
-    $aprilq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'April' AND year = '$dyear'");
-    $aprilq->execute();
-    for($i=0; $rows = $aprilq->fetch(); $i++){
-       $aprilr=$rows['sum(amount)'];
-    }
-    $mayq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'May'AND year = '$dyear' ");
-    $mayq->execute();
-    for($i=0; $rows = $mayq->fetch(); $i++){
-       $mayr=$rows['sum(amount)'];
-    }
-    $juneq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'June' AND year = '$dyear'");
-    $juneq->execute();
-    for($i=0; $rows = $juneq->fetch(); $i++){
-       $junr=$rows['sum(amount)'];
-    }
-    $julyq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'July'AND year = '$dyear' ");
-    $julyq->execute();
-    for($i=0; $rows = $julyq->fetch(); $i++){
-       $julr=$rows['sum(amount)'];
-    }
-    $augustq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'August' AND year = '$dyear'");
-    $augustq->execute();
-    for($i=0; $rows = $augustq->fetch(); $i++){
-       $augr=$rows['sum(amount)'];
-    }
-    $septemberq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'September' AND year = '$dyear'");
-    $septemberq->execute();
-    for($i=0; $rows = $septemberq->fetch(); $i++){
-       $septr=$rows['sum(amount)'];
-    }
-    $octoberq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'October' AND year = '$dyear'");
-    $octoberq->execute();
-    for($i=0; $rows = $octoberq->fetch(); $i++){
-       $octr=$rows['sum(amount)'];
-    }
-    $novemberq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'November' AND year = '$dyear'");
-    $novemberq->execute();
-    for($i=0; $rows = $novemberq->fetch(); $i++){
-       $novr=$rows['sum(amount)'];
-    }
-    $decemberq = $db->prepare( "SELECT sum(amount) from employee_salary where employeeName = '$project' AND month = 'December' AND year = '$dyear'");
-    $decemberq->execute();
-    for($i=0; $rows = $decemberq->fetch(); $i++){
-       $decr=$rows['sum(amount)'];
-    }
-    $jan = $janr;
-    $feb = $febr;
-    $mar = $marr;
-    $april = $aprilr;
-    $may = $mayr;
-    $jun = $junr;
-    $jul = $julr;
-    $aug = $augr;
-    $sept = $septr;
-    $oct = $octr;
-    $nov = $novr;
-    $dec = $decr;
-
+            if(isset($_POST["submitBtn"])){
+                include('connect.php'); 
+                $dyear=$_POST["eyear"];
+                $januaryq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'January'AND oyear = '$dyear'");
+                $januaryq->execute();
+                for($i=0; $rows = $januaryq->fetch(); $i++){
+                   $janr=$rows['sum(amount)'];
+                }
+                $februaryq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'February'AND oyear = '$dyear' ");
+                $februaryq->execute();
+                for($i=0; $rows = $februaryq->fetch(); $i++){
+                   $febr=$rows['sum(amount)'];
+                }
+                $marchq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'March'AND oyear = '$dyear' ");
+                $marchq->execute();
+                for($i=0; $rows = $marchq->fetch(); $i++){
+                   $marr=$rows['sum(amount)'];
+                }
+                $aprilq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'April' AND oyear = '$dyear'");
+                $aprilq->execute();
+                for($i=0; $rows = $aprilq->fetch(); $i++){
+                   $aprilr=$rows['sum(amount)'];
+                }
+                $mayq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'May'AND oyear = '$dyear' ");
+                $mayq->execute();
+                for($i=0; $rows = $mayq->fetch(); $i++){
+                   $mayr=$rows['sum(amount)'];
+                }
+                $juneq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'June' AND oyear = '$dyear'");
+                $juneq->execute();
+                for($i=0; $rows = $juneq->fetch(); $i++){
+                   $junr=$rows['sum(amount)'];
+                }
+                $julyq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'July'AND oyear = '$dyear' ");
+                $julyq->execute();
+                for($i=0; $rows = $julyq->fetch(); $i++){
+                   $julr=$rows['sum(amount)'];
+                }
+                $augustq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'August' AND oyear = '$dyear'");
+                $augustq->execute();
+                for($i=0; $rows = $augustq->fetch(); $i++){
+                   $augr=$rows['sum(amount)'];
+                }
+                $septemberq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'September' AND oyear = '$dyear'");
+                $septemberq->execute();
+                for($i=0; $rows = $septemberq->fetch(); $i++){
+                   $septr=$rows['sum(amount)'];
+                }
+                $octoberq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'October' AND oyear = '$dyear'");
+                $octoberq->execute();
+                for($i=0; $rows = $octoberq->fetch(); $i++){
+                   $octr=$rows['sum(amount)'];
+                }
+                $novemberq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'November' AND oyear = '$dyear'");
+                $novemberq->execute();
+                for($i=0; $rows = $novemberq->fetch(); $i++){
+                   $novr=$rows['sum(amount)'];
+                }
+                $decemberq = $db->prepare( "SELECT sum(amount) from other_ex where omonth = 'December' AND oyear = '$dyear'");
+                $decemberq->execute();
+                for($i=0; $rows = $decemberq->fetch(); $i++){
+                   $decr=$rows['sum(amount)'];
+                }
+                $jan = $janr;
+                $feb = $febr;
+                $mar = $marr;
+                $april = $aprilr;
+                $may = $mayr;
+                $jun = $junr;
+                $jul = $julr;
+                $aug = $augr;
+                $sept = $septr;
+                $oct = $octr;
+                $nov = $novr;
+                $dec = $decr;
+            }
      
  ?>
-                       <center><h2><?php $project = $_GET["id"]; echo 'Employee Salary of '.$project; ?></h2></center>  
+                        <p> Other Expenses</p>
+                        <?php 
+                        if(isset($_POST["eyear"])){
+                            $dyear=$_POST["eyear"];
+                            echo '<center><h1>'.$dyear.'</h1></center>';
+                        }
+                        ?>
                       <canvas id="bar-chart" width="800" height="450"></canvas> 
                         <script>
                         // Bar chart
@@ -178,7 +187,7 @@ require_once('auth.php');
                             labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                             datasets: [
                                 {
-                                label: "Employee Salary",
+                                label: "Expenses",
                                 backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#e8c3b9","#c45850"],
                                 data: [<?php echo $jan ?>, <?php echo $feb ?>, <?php echo $mar ?>, <?php echo $april ?>, <?php echo $may ?>, <?php echo $jun ?>, <?php echo $jul ?>, <?php echo $aug ?>, <?php echo $sept ?>, <?php echo $oct ?>, <?php echo $nov ?>, <?php echo $dec ?>]
                                 }
@@ -195,7 +204,9 @@ require_once('auth.php');
                         </script>   
                     </div>
                 <!-- <a href="javascript:Clickheretoprint()" style="font-size:15px"; class="btn btn-primary"><i class="fa fa-print"></i>Print</a> -->
-                <script>
+                
+                        <div class="clearfix"></div>
+<script>
            function myFunction() {
                window.print();
            }
@@ -203,7 +214,7 @@ require_once('auth.php');
        <link rel="stylesheet" type="text/css" media="print" href="print.css" />
        <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
                             Print
-                        </button> 
+                        </button>   
                 </div>  </div>
             </div>
             

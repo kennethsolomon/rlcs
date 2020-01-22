@@ -56,7 +56,7 @@ require_once('auth.php');
     </script>
 
 
-    <script language="javascript">
+    <!-- <script language="javascript">
         function Clickheretoprint()
         { 
           var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
@@ -71,7 +71,7 @@ require_once('auth.php');
         //   docprint.document.close(); 
         //   docprint.focus(); 
       }
-  </script>
+  </script> -->
  
 </head>
 
@@ -171,7 +171,7 @@ require_once('auth.php');
             }
      
  ?>
-                        <p> Sales Charts According to Product Category</p>
+                        <p> Monthly Sales Chart</p>
                       <canvas id="bar-chart" width="800" height="450"></canvas> 
                         <script>
                         // Bar chart
@@ -198,15 +198,17 @@ require_once('auth.php');
                         </script>   
                     </div>
                 <!-- <a href="javascript:Clickheretoprint()" style="font-size:15px"; class="btn btn-primary"><i class="fa fa-print"></i>Print</a> -->
-                <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
-                            Print
-                        </button>
+                
                         <div class="clearfix"></div>
 <script>
            function myFunction() {
                window.print();
            }
        </script>
+       <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+       <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
+                            Print
+                        </button>   
                 </div>  </div>
             </div>
             

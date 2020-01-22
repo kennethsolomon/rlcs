@@ -61,7 +61,7 @@ require_once('auth.php');
 
             <div id="maintable"><div style="margin-top: -19px; margin-bottom: 21px;">
             </div>
-            <form action="incoming.php" method="post" class = "form-group" >
+            <form action="incoming_receivable.php" method="post" class = "form-group" >
               <input type="hidden" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <input type="hidden" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
               <label>Select a Product</label><br />
@@ -224,7 +224,7 @@ require_once('auth.php');
 
               </tbody>
             </table><br>
-            <a rel="facebox" class = "btn btn-primary" href=" checkout.php?pt=<?php echo $_GET['id']?>&invoice=<?php echo $_GET['invoice']?>&total=<?php echo $fgfg ?>&cashier=<?php echo $session_cashier_name?>&p_amount=<?php echo $ccc?>&profit=<?php echo $totalProfit ?>">Check Out</a>
+            <a rel="facebox" class = "btn btn-primary" href="project_receivables_checkout.php?pt=<?php echo $_GET['id']?>&invoice=<?php echo $_GET['invoice']?>&total=<?php echo $fgfg ?>&cashier=<?php echo $session_cashier_name?>&p_amount=<?php echo $ccc?>&profit=<?php echo $totalProfit ?>">Check Out</a>
 
 
             <div class="clearfix"></div>

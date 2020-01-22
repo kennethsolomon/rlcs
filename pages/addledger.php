@@ -37,8 +37,12 @@
  	<input type="hidden" name="invoice" class = "form-control" value="<?php echo $finalcode; ?>" />
  	<input type="hidden" name="tot" class = "form-control" value="<?php echo $_GET['amount']; ?>" />
  	<div id="ac">
- 		<span>Amount : </span><input required type="number" name="amount" class = "form-control" />
- 		<span>Remarks : </span><input required type="text" name="remarks" class = "form-control" />
+ 		<span>Amount : </span><input required type="number" step='0.01' name="amount" class = "form-control" />
+ 		<span>Remarks :  </span><input required type="text" name="remarks" class = "form-control" />
+		 <!-- <br><select  name="remarks"  class = "form-control">
+         <option>PAID</option>
+         <option>BALANCE</option>
+       </select><br> -->
  		<span>&nbsp;</span><input class="btn btn-primary btn-block"  type="submit" value="save" class = "form-control" />
  	</div>
  </form>

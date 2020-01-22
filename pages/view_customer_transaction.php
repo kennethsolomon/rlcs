@@ -374,9 +374,10 @@ require_once('auth.php');
                window.print();
            }
        </script>
-            <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
+       <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+       <button onclick="myFunction()" id="btnPrint" class="btn btn-primary btn-m " >
                             Print
-                        </button>
+                        </button> 
                         <div class="clearfix"></div>
                         
         </div>

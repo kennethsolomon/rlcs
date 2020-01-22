@@ -64,15 +64,15 @@ for($i=0; $row = $result->fetch(); $i++){
 
 <div class="content" id="content">
 <center>
-	<div style="margin: 0 auto; padding: 20px; width: 700px; font-weight: normal;">
-	<img src="logo.png" style="width:70px;height:80px;align:center;margin-bottom:-20px">
+	<div style="margin-top: -60px; padding: 20px; width: 700px; font-weight: normal;">
+	<!-- <img src="logo.png" style="width:70px;height:80px;align:center;margin-bottom:-20px"> -->
 		<div style="width: 100%;">
 			<div style="width: 459px;">
 			<br>
-			<p style="font-size: 15px;"><b>	Ruffer Lumber and Construction Supply <br />
-					Address: Guinlajon Sorsogon City, Sorsogon<br />
-					Contact No: 0928-521-2731<br>
-					Email Add : rlcs@gmail.com</b><br></p>
+			<p style="text-align: center;font-size: 15px"><b>	RUFFER LUMBER AND CONSTRUCTION SUPPLY <br />
+					Guinlajon Sorsogon City, Sorsogon<br />
+					
+					<!-- Email Add : rlcs@gmail.com</b><br></p> -->
 					<div>
 					<?php
 						// $resulta = $db->prepare("SELECT * FROM customer WHERE customer_name= :a");
@@ -85,19 +85,31 @@ for($i=0; $row = $result->fetch(); $i++){
 						// 	$contact=$rowa['contact'];
 						// }
 						?>
-						<table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left;width : 100%;">
+						<p  style="font-size: 13px;text-align: center;margin-left	-50%">Delivery Receipt No: <b><?php echo $invoice_number ?>
+						<p  style="font-size: 15px;text-align: center;margin-left:	-35%"><b>Sold To:</span> <?php echo $cname ?>
+						<span style="font-size: 15px;text-align: center;margin-left:	40%">Date: <?php echo $date ?>
+						<p  style="font-size: 15px;text-align: center;margin-left:	-35%"><b>Address:</span> <?php echo $caddress ?>
+						<span style="font-size: 15px;text-align: center;margin-left:	10%">Contact: <?php echo $contact_number ?>
+						<!-- <td   style="text-align: right;font-size: 15px;margin-right: -150px"><b>Date: <?php echo $date ?> -->
+						<!-- <p style="text-align: left;font-size: 15px;margin-left:	-150px"><b>Sold To:</span> <?php echo $cname ?>
+						<td   style="text-align: right;font-size: 15px;margin-right: -150px"><b>Date: <?php echo $date ?>
+						<p style="text-align: left;font-size: 15px;margin-left:	-150px"><b>Address: <?php echo $caddress ?>
+						<tr style="text-align: left;font-size: 15px;margin-left:	50px"><b>Contact No: <?php echo $contact_number ?> -->
+
+						<!-- <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left;width : 100%;"> 
 							<tr>
-								<td width="35%">Sold To  </td>
+								<td width="20%">Sold To  </td>
 								<td width="75%"><?php echo $cname ?></td>
 							</tr>
 							
 							<tr>
-								<td width="35%">Address  </td>
-								<td width="35%"><?php echo $caddress ?></td>
-							</tr>
-							<tr>
 								<td width="35%">Date  </td>
 								<td width="75%"><?php echo $date?></td>
+							</tr>
+							<tr>
+								<br>
+								<td width="35%">Address  </td>
+								<td width="35%"><?php echo $caddress ?></td>
 							</tr>
 							<tr>
 								<td width="25%">Contact No  </td>
@@ -107,9 +119,10 @@ for($i=0; $row = $result->fetch(); $i++){
 								<td width="75%"><?php echo $invoice_number ?></td>
 								</tr>
 						</table>
+						<br> -->
 					</div>
 				</div>
-			</div><br>
+			</div>
 							
 			<div style="width: 100%">
 				<table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left;" width="100%">
@@ -157,6 +170,7 @@ for($i=0; $row = $result->fetch(); $i++){
 									?>
 								</td>
 							</tr>
+							
 							<?php
 						}
 						?>
@@ -209,6 +223,7 @@ for($i=0; $row = $result->fetch(); $i++){
 									?>
 								</strong></td>
 							</tr>
+							
 							<tr>
 								<td colspan="5"><strong style="font-size: 12px; color: #222222;">Cash Tendered:</strong></td>
 								<td colspan="2"><strong style="font-size: 12px; color: #222222;">
@@ -221,6 +236,7 @@ for($i=0; $row = $result->fetch(); $i++){
 						}
 						?>
 						<tr>
+						
 							<td colspan="5"><strong style="font-size: 12px; color: #222222;">
 								<?php
 								if($pt=='cash'){
@@ -257,13 +273,16 @@ for($i=0; $row = $result->fetch(); $i++){
 								?>
 							</strong></td>
 						</tr>
-
+						
 					</tbody>
 				</table>
 				</center>
+				<p style="text-align: left;font-size: 15px;margin-left:	50px"><b>Prepared by: <?php echo $cashier ?>
+				<br><p style="font-size: 15px;margin-left:	70px;align-right;text-align: left"> Approved by: _________________________
+				<tr style="font-size: 15px;align-left;text-align: left"> Received by: _________________________
 				<hr>
 			</div>
-
+									
 			<div style="text-align: right;margin-right: 370px; margin-top: -10px; font-size: 20px;"><b>Cashier :</b> <?php echo $cashier ?></div>
 		</div>
 	</div>
