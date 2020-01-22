@@ -71,59 +71,35 @@ for($i=0; $row = $result->fetch(); $i++){
 			<br>
 			<p style="text-align: center;font-size: 15px"><b>	RUFFER LUMBER AND CONSTRUCTION SUPPLY <br />
 					Guinlajon Sorsogon City, Sorsogon<br />
-					
-					<!-- Email Add : rlcs@gmail.com</b><br></p> -->
 					<div>
 					<?php
-						// $resulta = $db->prepare("SELECT * FROM customer WHERE customer_name= :a");
-						// $resulta->bindParam(':a', $cname);
-						// $resulta->execute();
 						
-						
-						// for($i=0; $rowa = $resulta->fetch(); $i++){
-						// 	$address=$rowa['address'];
-						// 	$contact=$rowa['contact'];
-						// }
 						?>
-						<p  style="font-size: 13px;text-align: center;margin-left	-50%">Delivery Receipt No: <b><?php echo $invoice_number ?>
-						<p  style="font-size: 15px;text-align: center;margin-left:	-35%"><b>Sold To:</span> <?php echo $cname ?>
-						<span style="font-size: 15px;text-align: center;margin-left:	40%">Date: <?php echo $date ?>
-						<p  style="font-size: 15px;text-align: center;margin-left:	-35%"><b>Address:</span> <?php echo $caddress ?>
-						<span style="font-size: 15px;text-align: center;margin-left:	10%">Contact: <?php echo $contact_number ?>
-						<!-- <td   style="text-align: right;font-size: 15px;margin-right: -150px"><b>Date: <?php echo $date ?> -->
-						<!-- <p style="text-align: left;font-size: 15px;margin-left:	-150px"><b>Sold To:</span> <?php echo $cname ?>
-						<td   style="text-align: right;font-size: 15px;margin-right: -150px"><b>Date: <?php echo $date ?>
-						<p style="text-align: left;font-size: 15px;margin-left:	-150px"><b>Address: <?php echo $caddress ?>
-						<tr style="text-align: left;font-size: 15px;margin-left:	50px"><b>Contact No: <?php echo $contact_number ?> -->
 
-						<!-- <table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left;width : 100%;"> 
-							<tr>
-								<td width="20%">Sold To  </td>
-								<td width="75%"><?php echo $cname ?></td>
-							</tr>
-							
-							<tr>
-								<td width="35%">Date  </td>
-								<td width="75%"><?php echo $date?></td>
-							</tr>
-							<tr>
-								<br>
-								<td width="35%">Address  </td>
-								<td width="35%"><?php echo $caddress ?></td>
-							</tr>
-							<tr>
-								<td width="25%">Contact No  </td>
-								<td width="75%"><?php echo $contact_number ?></td>
-							</tr>
-							<td width="35%">Delivery Receipt No. </td>
-								<td width="75%"><?php echo $invoice_number ?></td>
+						<div>
+						<table border="1" cellpadding="0" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left; margin-left: -100px;" width="144%">
+							<thead>
+								<tr>
+									<th> Sold To: </th>
+									<th> Date: </th>
+									<th> Address: </th>
+									<th> Contact: </th>
+									<th> Delivery Receipt No:  </th>
 								</tr>
+							</thead>
+							<tr>
+								<td><?php echo $cname ?></td>
+								<td><?php echo $date ?></td>
+								<td><?php echo substr($caddress, 0, 35) ?></td>
+								<td><?php echo $contact_number ?></td>
+								<td style="text-align: right;"><?php echo $invoice_number ?></td>
+							</tr>
+							</tbody>
 						</table>
-						<br> -->
 					</div>
 				</div>
-			</div>
-							
+			
+			</div>		<br>		
 			<div style="width: 100%">
 				<table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left;" width="100%">
 					<thead>
@@ -133,7 +109,6 @@ for($i=0; $row = $result->fetch(); $i++){
 							<th> Description Name </th>
 							<th> Qty </th>
 							<th> Price </th>
-							<!-- <th> Discount </th> -->
 							<th> Total Amount </th>
 						</tr>
 					</thead>
@@ -157,12 +132,6 @@ for($i=0; $row = $result->fetch(); $i++){
 									echo formatMoney($ppp, true);
 									?>
 								</td>
-								<!-- <td>
-									<?php
-									// $ddd=$row['discount'];
-									// echo formatMoney($ddd, true);
-									?>
-								</td> -->
 								<td>
 									<?php
 									$dfdf=$row['total_amount'];
@@ -174,38 +143,6 @@ for($i=0; $row = $result->fetch(); $i++){
 							<?php
 						}
 						?>
-
-						<!-- <tr>
-							<td colspan="5"><strong style="font-size: 12px; color: #222222;">Amount:</strong></td>
-							<td colspan="2"><strong style="font-size: 12px; color: #222222;">
-								<?php
-								// $sdsd=$_GET['invoice'];
-								// $resultas = $db->prepare("SELECT * FROM sales_order WHERE invoice= :a");
-								// $resultas->bindParam(':a', $sdsd);
-								// $resultas->execute();
-								// for($i=0; $rowas = $resultas->fetch(); $i++){
-								// 	$fgfg=$rowas['amount'];
-									
-								// 	echo formatMoney($fgfg, true);
-								// }
-								?>
-							</strong></td>
-						</tr> -->
-						<!-- <tr>
-							<td colspan="6"><strong style="font-size: 12px; color: #222222;">VAT:</strong></td>
-							<td colspan="2"><strong style="font-size: 12px; color: #222222;">
-								<?php
-								// $sdsd=$_GET['invoice'];
-								// $resultas = $db->prepare("SELECT * FROM sales_order WHERE invoice= :a");
-								// $resultas->bindParam(':a', $sdsd);
-								// $resultas->execute();
-								// for($i=0; $rowas = $resultas->fetch(); $i++){
-								// 	$fgfg=$rowas['vat'];
-								// 	echo formatMoney($fgfg, true);
-								// }
-								?>
-							</strong></td>
-						</tr> -->
 						<?php if($pt=='cash'){
 							?>
 							<tr>
@@ -278,8 +215,8 @@ for($i=0; $row = $result->fetch(); $i++){
 				</table>
 				</center>
 				<p style="text-align: left;font-size: 15px;margin-left:	50px"><b>Prepared by: <?php echo $cashier ?>
-				<br><p style="font-size: 15px;margin-left:	70px;align-right;text-align: left"> Approved by: _________________________
-				<tr style="font-size: 15px;align-left;text-align: left"> Received by: _________________________
+				<span style="font-size: 15px;margin-left:30px;align-right;text-align: left"> Approved by: __________________
+				<tr style="font-size: 15px;align-left;text-align: left"> Received by: __________________
 				<hr>
 			</div>
 									
