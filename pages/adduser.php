@@ -17,6 +17,7 @@
                             <span>POSITION: </span>
                             <select name = "post" class = "form-control">
                                 <option>Cashier</option>
+                                <option>Project Manager</option>
                             </select>    
                             <span>&nbsp;</span><input class="btn btn-primary btn-block" type="submit" class = "form-control" value="save" />
                         </div>

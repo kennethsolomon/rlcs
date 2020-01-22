@@ -42,7 +42,12 @@ $finalcode='RS-'.createRandomPassword();
 				<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 			</a>
 			<ul class="dropdown-menu dropdown-user">
+			<?php 
+				
+						if($session_admin_position == 'Admin'){
+							?>	
 				<li><a  href="#myModal" data-toggle="modal"><i class="fa fa-user fa-fw"></i> Add User</a>
+				<?php } ?>
 					<li><a href="Logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 					</li>
 				</ul>
@@ -52,27 +57,37 @@ $finalcode='RS-'.createRandomPassword();
 		</ul>
 		<!-- /.navbar-top-links -->
 
-
-
 		<div class="navbar-default sidebar" role="navigation">
 			<div class="sidebar-nav navbar-collapse">
 				<ul class="nav" id="side-menu">
+					
+					<?php 
+				
+						if($session_admin_position == 'Project Manager'){
+							?>	
 					<li>
 						<a href="home.php"><i class="fa fa-home fa-fw"></i> Home</a>
 					</li>
-					<!-- <li>
-						<a href="#"><i class="fa fa-money fa-fw"></i> Select payment method<span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li>
-								<a href="sales.php?id=cash&invoice=<?php echo $finalcode ?>">Cash</a>
-							</li>
-							<li>
-								<a href="sales.php?id=credit&invoice=<?php echo $finalcode ?>">Credit</a>
-							</li>
-						</ul>
-					</li> -->
 					<li>
-						<a href="products.php"><i class="fa fa-table fa-fw"></i> Product</a>
+						<a href="products.php"><i class="fa fa-table fa-fw "></i> Product</a>
+					</li>
+					<li>
+						<a href="purchaseslist.php"><i class="fa fa-list-alt fa-fw"></i> Purchase Order List</a>
+					</li>
+					<li>
+						<a href="orderpo.php"><i class="fa fa-list-alt fa-fw"></i> Purchase Order Form</a>
+					</li>
+					<li>
+						<a href="supplier.php"><i class="fa fa-truck fa-fw"></i> Supplier</a>
+					</li>
+							<?php 
+						} else {
+							?>
+					<li>
+						<a href="home.php"><i class="fa fa-home fa-fw"></i> Home</a>
+					</li>
+					<li>
+						<a href="products.php"><i class="fa fa-table fa-fw "></i> Product</a>
 					</li>
 					<li>
 						<a href="customer.php"><i class="fa fa-user fa-fw"></i> Project / Client</a>
@@ -164,9 +179,20 @@ $finalcode='RS-'.createRandomPassword();
 						</ul>
 					</li>
 
+							<?php
+						
+						}
+					?>
+					
+
 				</div>
 			</div>
 			<!-- /.navbar-static-side -->
 		</nav>
 
-		<?php include('adduser.php'); ?>
+
+		<?php 
+		if($session_admin_position == 'Admin'){
+			include('adduser.php'); 
+		}
+		?>

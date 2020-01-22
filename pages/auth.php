@@ -16,4 +16,5 @@
 	$row = $query->fetch();
 
 	$session_admin_name = $row['name'];
+	$session_admin_position = $row['position'];
 ?>
