@@ -64,6 +64,7 @@ require_once('auth.php');
             <form action="incoming.php" method="post" class = "form-group" >
               <input type="hidden" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <input type="hidden" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
+              <input type="hidden" name="pending" class = "form-control" value="pending" />
               <label>Select a Product</label><br />
               <select  name="product"  id="product" style="width:500px;" class="chzn-select">
 
