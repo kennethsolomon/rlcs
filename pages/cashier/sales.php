@@ -129,9 +129,7 @@ require_once('auth.php');
                 ?>
                 
               </select>
-
               
-       
               <br />
               <label>Number of Item</label>
               <input type="number" name="qty" value="1" min = "1" class = "form-control"  autocomplete="off" style="width: 100px; padding-top: 6px; padding-bottom: 6px; margin-right: 4px;" />

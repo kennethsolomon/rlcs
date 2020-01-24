@@ -3,6 +3,7 @@ session_start();
 include('connect.php');
 $a = $_POST['invoice'];
 $b = $_POST['product'];
+$cashierCreditStatus = "pending_credit";
 $c = $_POST['qty'];
 $w = $_POST['pt'];
 $r = $_POST['vat'];
@@ -42,6 +43,10 @@ $q = $db->prepare($sql);
 $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit));
 header("location: sales_receivable.php?id=$w&invoice=$a");
 
+$sql = "INSERT INTO sales_order (invoice,product,qty,amount,name,price,discount,category,date,omonth,oyear,qtyleft,dname,vat,total_amount, profit, status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o, :profit, :cashierCreditStatus)";
+    $q = $db->prepare($sql);
+    $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierCreditStatus'=>$cashierCreditStatus));
+    header("location: sales_receivable.php?id=$w&invoice=$a");
 
 
 ?>

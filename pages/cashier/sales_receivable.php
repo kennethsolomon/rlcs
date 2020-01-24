@@ -59,6 +59,38 @@ require_once('auth.php');
               <h1 class="page-header">Payment | <?php echo $_GET['id']; ?> </h1>
             </div>
 
+            <form action="pendingTransactions.php" method="get" id="pendingTransactions" name="pendingTransactions" class = "form-group" >
+              <label>Pending Transactions: </label>
+              <input type="hidden" name="cashierStatus" class = "form-control" value="<?php echo $_GET['id']; ?>" />
+              <select  name="pendingTransactionList"  id="pendingTransactionList" style="width:150px;" class="chzn-select" onchange="pendingTransactions.submit()">
+                <option></option>
+                <?php
+                include('connect.php');
+                $cash = $_GET['id'];
+                $credit = $_GET['id'];
+                if($cash == 'cash'){
+                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_cash' group by invoice");
+                } else if($cash == 'credit'){
+                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_credit' group by invoice");
+                }
+                $result->execute();
+                for($i=0; $row = $result->fetch(); $i++){
+                  $invoice = $row['invoice'];
+                  ?>
+                  <option name="invoice" value="<?php echo $invoice;?>" 
+                    <?php
+                    ?>
+                    >
+                    <?php echo $invoice; ?>
+                  </option>
+                } 
+                  <?php
+                }
+                ?>
+                
+              </select>
+              </form>
+
             <div id="maintable"><div style="margin-top: -19px; margin-bottom: 21px;">
             </div>
             <form action="incoming_receivable.php" method="post" class = "form-group" >
