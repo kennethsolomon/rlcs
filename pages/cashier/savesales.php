@@ -18,6 +18,12 @@ $dmonth = date('F');
 $dyear = date('Y');
 
 if($d=='credit') {
+	$sql = "UPDATE sales_order 
+    SET status=''
+    WHERE invoice=?"; 
+    $q = $db->prepare($sql);
+	$q->execute(array($a));
+	
 	$f = $_POST['due'];
 	$sql = "INSERT INTO sales (invoice_number,cashier,date,type,total_amount,due_date,name,month,year,balance,p_amount,vat,address, contact_number, profit) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:k,:j,:l, :m, :z, :profit)";
 	$q = $db->prepare($sql);
@@ -26,6 +32,12 @@ if($d=='credit') {
 	exit();
 }
 if($d=='cash') {
+	$sql = "UPDATE sales_order 
+    SET status=''
+    WHERE invoice=?"; 
+    $q = $db->prepare($sql);
+	$q->execute(array($a));
+	
 	$f = $_POST['cash'];
 	$sql = "INSERT INTO sales (profit, invoice_number,cashier,date,type,amount,cash,name,month,year,p_amount,vat, address, contact_number) VALUES (:profit, :a,:b,:c,:d,:e,:f,:g,:h,:i,:k,:j,:x,:z)";
 	$q = $db->prepare($sql);
