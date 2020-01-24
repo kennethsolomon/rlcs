@@ -64,6 +64,7 @@ require_once('auth.php');
 
             <form action="pendingTransactions.php" method="get" id="pendingTransactions" name="pendingTransactions" class = "form-group" >
               <label>Pending Transactions: </label>
+              <input type="hidden" name="cashierStatus" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <select  name="pendingTransactionList"  id="pendingTransactionList" style="width:150px;" class="chzn-select" onchange="pendingTransactions.submit()">
                 <option></option>
                 <?php
