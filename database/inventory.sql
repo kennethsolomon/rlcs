@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2020 at 05:08 AM
+-- Generation Time: Jan 24, 2020 at 09:00 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -234,7 +234,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_code`, `product_name`, `description_name`, `unit`, `cost`, `total_cost`, `price`, `supplier`, `qty_left`, `category`, `date_delivered`, `expiration_date`) VALUES
-(14, 'P-0303532', 'Gravel', 'G1', 'Per m3', '500', 530500, '1000', 'Legazpi', 1057, 'Gravel', '2019-09-16', ''),
+(14, 'P-0303532', 'Gravel', 'G1', 'Per m3', '500', 530500, '1000', 'Legazpi', 1054, 'Gravel', '2019-09-16', ''),
 (16, 'P-22520330', 'Republic Cement', 'Republic', 'Per Pieces', '225', 413550, '235', 'SORCOM', 1836, 'Cement', '2019-09-17', '2020-01-04'),
 (17, 'P-0322223', 'Black Sand', 'Black Sand', 'Per m3', '300', 0, '700', 'Legazpi', 78, 'Black Sand', '2019-10-09', ''),
 (23, 'P-233203', 'Portland Premium', 'APO', 'Per Pieces', '215', 0, '230', 'SORCOM', 465, 'Cement', '2019-12-27', ''),
@@ -629,7 +629,9 @@ INSERT INTO `sales_order` (`transaction_id`, `invoice`, `product`, `qty`, `amoun
 (270, 'RS-27007382', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/22/2020', 'January', '2020', '1837', 'Republic', '0', '235', 10, ''),
 (271, 'RS-2203004', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/22/2020', 'January', '2020', '1060', 'G1', '0', '1000', 500, ''),
 (272, 'RS-8364022', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/22/2020', 'January', '2020', '1059', 'G1', '0', '1000', 500, ''),
-(274, 'RS-3869306', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/22/2020', 'January', '2020', '1057', 'G1', '0', '1000', 500, 'pending');
+(278, 'RS-034222', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/24/2020', 'January', '2020', '1056', 'G1', '0', '1000', 500, ''),
+(284, 'RS-0222230', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/24/2020', 'January', '2020', '1055', 'G1', '0', '1000', 500, 'pending_cash'),
+(285, 'RS-22023630', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/24/2020', 'January', '2020', '1054', 'G1', '0', '1000', 500, 'pending_credit');
 
 -- --------------------------------------------------------
 
@@ -816,7 +818,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `sales_order`
 --
 ALTER TABLE `sales_order`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=275;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
 
 --
 -- AUTO_INCREMENT for table `supliers`
