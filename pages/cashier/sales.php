@@ -61,6 +61,38 @@ require_once('auth.php');
 
             <div id="maintable"><div style="margin-top: -19px; margin-bottom: 21px;">
             </div>
+
+            <form action="pendingTransactions.php" method="get" id="pendingTransactions" name="pendingTransactions" class = "form-group" >
+              <label>Pending Transactions: </label>
+              <select  name="pendingTransactionList"  id="pendingTransactionList" style="width:150px;" class="chzn-select" onchange="pendingTransactions.submit()">
+                <option></option>
+                <?php
+                include('connect.php');
+                $cash = $_GET['id'];
+                $credit = $_GET['id'];
+                if($cash == 'cash'){
+                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_cash' group by invoice");
+                } else if($cash == 'credit'){
+                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_credit' group by invoice");
+                }
+                $result->execute();
+                for($i=0; $row = $result->fetch(); $i++){
+                  $invoice = $row['invoice'];
+                  ?>
+                  <option name="invoice" value="<?php echo $invoice;?>" 
+                    <?php
+                    ?>
+                    >
+                    <?php echo $invoice; ?>
+                  </option>
+                } 
+                  <?php
+                }
+                ?>
+                
+              </select>
+              </form>
+              
             <form action="incoming.php" method="post" class = "form-group" >
               <input type="hidden" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <input type="hidden" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
@@ -96,6 +128,9 @@ require_once('auth.php');
                 ?>
                 
               </select>
+
+              
+       
               <br />
               <label>Number of Item</label>
               <input type="number" name="qty" value="1" min = "1" class = "form-control"  autocomplete="off" style="width: 100px; padding-top: 6px; padding-bottom: 6px; margin-right: 4px;" />
@@ -115,9 +150,6 @@ require_once('auth.php');
                   <th> Category </th>
                   <th> Quantity </th>
                   <th> Price </th>
-                  <!-- <th> Discount </th>
-                  <th> VAT </th> -->
-           
                   <th> Total Amount </th>
                   <th> Delete </th>
                 </tr>

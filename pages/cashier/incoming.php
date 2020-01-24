@@ -2,7 +2,8 @@
 session_start();
 include('connect.php');
 $a = $_POST['invoice'];
-$cashierStatus = $_POST['pending'];
+$cashierCashStatus = "pending_cash";
+$cashierCreditStatus = "pending_credit";
 $b = $_POST['product'];
 $c = $_POST['qty'];
 $w = $_POST['pt'];
@@ -38,10 +39,19 @@ $z=$qtyleft-$c;
 $vat=$d*$r;
 $total=$vat+$d;
 // query
-$sql = "INSERT INTO sales_order (invoice,product,qty,amount,name,price,discount,category,date,omonth,oyear,qtyleft,dname,vat,total_amount, profit, status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o, :profit, :cashierStatus)";
-$q = $db->prepare($sql);
-$q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierStatus'=>$cashierStatus));
-header("location: sales.php?id=$w&invoice=$a");
+if($w == 'cash'){
+    $sql = "INSERT INTO sales_order (invoice,product,qty,amount,name,price,discount,category,date,omonth,oyear,qtyleft,dname,vat,total_amount, profit, status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o, :profit, :cashierCashStatus)";
+    $q = $db->prepare($sql);
+    $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierCashStatus'=>$cashierCashStatus));
+    header("location: sales.php?id=$w&invoice=$a");
+} else if ($w == 'credit'){
+    $sql = "INSERT INTO sales_order (invoice,product,qty,amount,name,price,discount,category,date,omonth,oyear,qtyleft,dname,vat,total_amount, profit, status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o, :profit, :cashierCreditStatus)";
+    $q = $db->prepare($sql);
+    $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierCreditStatus'=>$cashierCreditStatus));
+    header("location: sales.php?id=$w&invoice=$a");
+}
+
+
 
 
 
