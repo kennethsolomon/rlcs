@@ -2,8 +2,8 @@
 session_start();
 include('connect.php');
 $a = $_POST['invoice'];
-$cashierCashStatus = "pending_cash";
-$cashierCreditStatus = "pending_credit";
+$cashierCashStatus = 'pending_cash';
+$cashierCreditStatus = 'pending_credit';
 $b = $_POST['product'];
 $c = $_POST['qty'];
 $w = $_POST['pt'];

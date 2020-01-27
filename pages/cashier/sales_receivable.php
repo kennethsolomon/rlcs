@@ -70,7 +70,7 @@ require_once('auth.php');
                 $credit = $_GET['id'];
                 if($cash == 'cash'){
                   $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_cash' group by invoice");
-                } else if($cash == 'credit'){
+                } else if($credit == 'credit'){
                   $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_credit' group by invoice");
                 }
                 $result->execute();
