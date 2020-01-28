@@ -67,7 +67,7 @@ $finalcode='RS-'.createRandomPassword();
 								<a href="sales.php?id=credit&invoice=<?php echo $finalcode ?>">Receivables</a>
 							</li>
 							<li>
-								<a href="sales_receivable.php?id=credit&invoice=<?php echo $finalcode ?>">Project Receivables</a>
+								<a href="sales_receivable.php?id=project_receivable&invoice=<?php echo $finalcode ?>">Project Receivables</a>
 							</li>
 							<li>
 								<a href="employee_salary.php?id=project_employee_salary&invoice=<?php echo $finalcode ?>">Project Employee Salary</a>

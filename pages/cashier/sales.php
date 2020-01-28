@@ -178,31 +178,15 @@ require_once('auth.php');
                       echo formatMoney($ppp, true);
                       ?>
                     </td>
-                    <!-- <td>
                       <?php
-                      // $ddd=$row['discount'];
-                      // echo formatMoney($ddd, true);
                       ?>
-                    </td> -->
-                    <!-- <td> -->
                       <?php
-                      // $fff=$row['vat'];
-                      // echo formatMoney($fff, true);
                       ?>
-                    <!-- </td> -->
-                    <!-- <td>
-                   
                       <?php
                      $profit = $row['profit'];
                      formatMoney($profit, true);
                       $ccc=$row['amount'];
-                      // $qty = $row['qty'];
-                      // $price = $row['price'];
-                      // $profit =abs((($ccc - $price) * $qty))  ;  
-                      // echo formatMoney($profit, true);
                       ?>
-                    </td> -->
-
                     <td>
                       <?php
                       $dfdf=$row['total_amount'];
@@ -256,8 +240,6 @@ require_once('auth.php');
               </tbody>
             </table><br>
             <a rel="facebox" class = "btn btn-primary" href=" checkout.php?pt=<?php echo $_GET['id']?>&invoice=<?php echo $_GET['invoice']?>&total=<?php echo $fgfg ?>&cashier=<?php echo $session_cashier_name?>&p_amount=<?php echo $ccc?>&profit=<?php echo $totalProfit ?>">Check Out</a>
-
-
             <div class="clearfix"></div>
           </div>
 

@@ -61,17 +61,14 @@ require_once('auth.php');
 
             <form action="pendingTransactions.php" method="get" id="pendingTransactions" name="pendingTransactions" class = "form-group" >
               <label>Pending Transactions: </label>
-              <input type="hidden" name="cashierStatus" class = "form-control" value="<?php echo $_GET['id']; ?>" />
+              <input type="hidden" name="projectStatus" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <select  name="pendingTransactionList"  id="pendingTransactionList" style="width:150px;" class="chzn-select" onchange="pendingTransactions.submit()">
                 <option></option>
                 <?php
                 include('connect.php');
-                $cash = $_GET['id'];
-                $credit = $_GET['id'];
-                if($cash == 'cash'){
-                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_cash' group by invoice");
-                } else if($credit == 'credit'){
-                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_credit' group by invoice");
+                $salesReceivable = $_GET['id'];
+                if($salesReceivable == 'project_receivable'){
+                  $result = $db->prepare("SELECT invoice, transaction_id FROM sales_order WHERE status = 'pending_project' group by invoice");
                 }
                 $result->execute();
                 for($i=0; $row = $result->fetch(); $i++){
@@ -209,8 +206,7 @@ require_once('auth.php');
                       echo formatMoney($dfdf, true);
                       ?>
                     </td>
-
-                    <td><a href="delete.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>&code=<?php echo $row['product'];?>"> Delete</a></td>
+                    <td><a rel="facebox" class = "btn btn-primary" href="editsales.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>"><i class="fa fa-pencil"></i></a> | <a class = "btn btn-danger" href="delete.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>&code=<?php echo $row['product'];?>"> <i class="fa fa-trash"></i></a></td>
                   </tr>
                   <?php
                 }

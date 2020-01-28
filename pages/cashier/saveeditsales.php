@@ -12,5 +12,9 @@
 			WHERE transaction_id=?";
 	$q = $db->prepare($sql);
 	$q->execute(array($price ,$updatedTotalAmount, $transactionId));
-	header("location: sales.php?id=$typeOfTransaction&invoice=$invoice");
+	if($typeOfTransaction == 'project_receivable'){
+		header("location: sales_receivable.php?id=$typeOfTransaction&invoice=$invoice");
+	} else {
+		header("location: sales.php?id=$typeOfTransaction&invoice=$invoice");
+	}
 ?>

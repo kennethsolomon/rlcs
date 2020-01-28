@@ -15,5 +15,10 @@
 	$result = $db->prepare("DELETE FROM sales_order WHERE transaction_id= :memid");
 	$result->bindParam(':memid', $id);
 	$result->execute();
-	header("location: sales.php?id=$sdsd&invoice=$c");
+	if($sdsd == 'project_receivable'){
+		header("location: sales_receivable.php?id=$sdsd&invoice=$c");
+	} else {
+		header("location: sales.php?id=$sdsd&invoice=$c");
+	}
+	
 ?>
