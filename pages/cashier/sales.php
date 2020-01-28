@@ -150,7 +150,7 @@ require_once('auth.php');
                   <th> Quantity </th>
                   <th> Price </th>
                   <th> Total Amount </th>
-                  <th> Delete </th>
+                  <th> Action </th>
                 </tr>
               </thead>
               <tbody>
@@ -209,8 +209,7 @@ require_once('auth.php');
                       echo formatMoney($dfdf, true);
                       ?>
                     </td>
-
-                    <td><a href="delete.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>&code=<?php echo $row['product'];?>"> Delete</a></td>
+                    <td><a rel="facebox" class = "btn btn-primary" href="editsales.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>"><i class="fa fa-pencil"></i></a> | <a class = "btn btn-danger" href="delete.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>&code=<?php echo $row['product'];?>"> <i class="fa fa-trash"></i></a></td>
                   </tr>
                   <?php
                 }
