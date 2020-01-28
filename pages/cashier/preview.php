@@ -116,6 +116,7 @@ for($i=0; $row = $result->fetch(); $i++){
 
 						<?php
 						$id=$_GET['invoice'];
+						$isChecked=$_GET['isChecked'];
 						$result = $db->prepare("SELECT * FROM sales_order WHERE invoice= :userid");
 						$result->bindParam(':userid', $id);
 						$result->execute();
@@ -128,14 +129,18 @@ for($i=0; $row = $result->fetch(); $i++){
 								<td><?php echo $row['qty']; ?></td>
 								<td>
 									<?php
-									$ppp=$row['price'];
-									echo formatMoney($ppp, true);
+										if($isChecked !== 'isChecked'){
+											$ppp=$row['price'];
+											echo formatMoney($ppp, true);
+										}
 									?>
 								</td>
 								<td>
 									<?php
-									$dfdf=$row['total_amount'];
-									echo formatMoney($dfdf, true);
+									if($isChecked !== 'isChecked'){
+										$dfdf=$row['total_amount'];
+										echo formatMoney($dfdf, true);
+									}
 									?>
 								</td>
 							</tr>
@@ -154,8 +159,10 @@ for($i=0; $row = $result->fetch(); $i++){
 									$resultas->bindParam(':a', $sdsd);
 									$resultas->execute();
 									for($i=0; $rowas = $resultas->fetch(); $i++){
-										$fgfg=$rowas['sum(total_amount)'];
-										echo formatMoney($fgfg, true);
+										if($isChecked !== 'isChecked'){
+											$fgfg=$rowas['sum(total_amount)'];
+											echo formatMoney($fgfg, true);
+										}
 									}
 									?>
 								</strong></td>
@@ -165,7 +172,9 @@ for($i=0; $row = $result->fetch(); $i++){
 								<td colspan="5"><strong style="font-size: 12px; color: #222222;">Cash Tendered:</strong></td>
 								<td colspan="2"><strong style="font-size: 12px; color: #222222;">
 									<?php
-									echo formatMoney($cash, true);
+									if($isChecked !== 'isChecked'){
+										echo formatMoney($cash, true);
+									}
 									?>
 								</strong></td>
 							</tr>
@@ -205,7 +214,9 @@ for($i=0; $row = $result->fetch(); $i++){
 									echo $cash;
 								}
 								if($pt=='cash'){
-									echo formatMoney($amount, true);
+									if($isChecked !== 'isChecked'){
+										echo formatMoney($amount, true);
+									}
 								}
 								?>
 							</strong></td>
