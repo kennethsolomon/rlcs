@@ -67,8 +67,8 @@ require_once('auth.php');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                <img src="rlcs.png" alt="Smiley face" height="70" width="100%" style="text-align:right; margin-top:10px">
-                    <h1 class="page-header"> Profit  Report</h1>
+                <!-- <img src="rlcs.png" alt="Smiley face" height="70" width="100%" style="text-align:right; margin-top:10px"> -->
+                    <h1 class="page-header"> Profit Report</h1>
                 </div>
                 <div id="maintable">
                     <div style="margin-top: -19px; margin-bottom: 21px;">

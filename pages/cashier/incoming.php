@@ -2,8 +2,8 @@
 session_start();
 include('connect.php');
 $a = $_POST['invoice'];
-$cashierCashStatus = "pending_cash";
-$cashierCreditStatus = "pending_credit";
+$cashierCashStatus = 'pending_cash';
+$cashierCreditStatus = 'pending_credit';
 $b = $_POST['product'];
 $c = $_POST['qty'];
 $w = $_POST['pt'];
@@ -50,9 +50,4 @@ if($w == 'cash'){
     $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierCreditStatus'=>$cashierCreditStatus));
     header("location: sales.php?id=$w&invoice=$a");
 }
-
-
-
-
-
 ?>

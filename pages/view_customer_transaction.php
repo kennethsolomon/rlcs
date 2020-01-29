@@ -55,7 +55,7 @@ require_once('auth.php');
             <div class="row">
                 <div class="col-lg-12">
                 <!-- <img src="rlcs.png" alt="Smiley face" height="70" width="1050" style="text-align:right; margin-top:10px"> -->
-                    <h1 class="page-header">Customer Transaction Record</h1>
+                    <h1 class="page-header">Client / Project Transaction Record</h1>
                 </div>
 
                 <div id="maintable"><div style="margin-top: -19px; margin-bottom: 21px;">

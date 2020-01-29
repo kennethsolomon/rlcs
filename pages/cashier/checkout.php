@@ -97,8 +97,6 @@ background-repeat:no-repeat;
 <input type="hidden" name="cashier" value="<?php echo $_GET['cashier']; ?>" />
 <input type="hidden" name="p_amount" value="<?php echo $_GET['p_amount']; ?>" />
 <input type="text" required size="25" value="" name="cname" id="country" placeholder="Enter Customer Name" style="width: 268px;" /><br><br>
-<!-- <input type="text" size="25" value="" name="cname" id="country" onkeyup="suggest(this.value);" onblur="fill();" class="" autocomplete="off" placeholder="Enter Customer Name" style="width: 268px;" /><br><br> -->
-<!-- <input type="text" size="25" value="" address="caddress"  onkeyup="suggest(this.value);" onblur="fill();" class="" autocomplete="off" placeholder="Enter Customer Address" style="width: 268px;" /><br><br> -->
 <input type="text" required size="25" value="" name="caddress" id="country" placeholder="Enter Customer Address" style="width: 268px;" /><br><br>
 <input type="number" required size="25" value="" name="ccontact" id="country" placeholder="Enter Customer Contact Number" style="width: 268px;" /><br><br>
 
@@ -115,7 +113,9 @@ if($asas=='cash') {
 ?><input required type="text" name="cash" placeholder="Cash" style="width: 268px; margin-bottom: 15px;" /><br>
 <?php
 }
-?><input class="btn btn-primary btn-block" type="submit" value="save" style="width: 268px;" />
+?>
+<input type="checkbox" name="isChecked" value="isChecked"/> Hide Computation Details?
+<input class="btn btn-primary btn-block" type="submit" value="save" style="width: 268px; margin-top: 10px" />
 </div>
 </form>
 </body>

@@ -114,7 +114,7 @@ for($i=0; $row = $result->fetch(); $i++){
 							<th> Brand Name </th>
 							<th> Description Name </th>
 							<th> Qty </th>
-							<th> Price </th>
+							<th> Unit Price </th>
 							<!-- <th> Discount </th> -->
 							<th> Total Amount </th>
 						</tr>

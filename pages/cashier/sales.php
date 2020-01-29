@@ -150,7 +150,7 @@ require_once('auth.php');
                   <th> Quantity </th>
                   <th> Price </th>
                   <th> Total Amount </th>
-                  <th> Delete </th>
+                  <th> Action </th>
                 </tr>
               </thead>
               <tbody>
@@ -178,39 +178,22 @@ require_once('auth.php');
                       echo formatMoney($ppp, true);
                       ?>
                     </td>
-                    <!-- <td>
                       <?php
-                      // $ddd=$row['discount'];
-                      // echo formatMoney($ddd, true);
                       ?>
-                    </td> -->
-                    <!-- <td> -->
                       <?php
-                      // $fff=$row['vat'];
-                      // echo formatMoney($fff, true);
                       ?>
-                    <!-- </td> -->
-                    <!-- <td>
-                   
                       <?php
                      $profit = $row['profit'];
                      formatMoney($profit, true);
                       $ccc=$row['amount'];
-                      // $qty = $row['qty'];
-                      // $price = $row['price'];
-                      // $profit =abs((($ccc - $price) * $qty))  ;  
-                      // echo formatMoney($profit, true);
                       ?>
-                    </td> -->
-
                     <td>
                       <?php
                       $dfdf=$row['total_amount'];
                       echo formatMoney($dfdf, true);
                       ?>
                     </td>
-
-                    <td><a href="delete.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>&code=<?php echo $row['product'];?>"> Delete</a></td>
+                    <td><a rel="facebox" class = "btn btn-primary" href="editsales.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>"><i class="fa fa-pencil"></i></a> | <a class = "btn btn-danger" href="delete.php?id=<?php echo $row['transaction_id']; ?>&invoice=<?php echo $_GET['invoice']; ?>&dle=<?php echo $_GET['id']; ?>&qty=<?php echo $row['qty'];?>&code=<?php echo $row['product'];?>"> <i class="fa fa-trash"></i></a></td>
                   </tr>
                   <?php
                 }
@@ -257,8 +240,6 @@ require_once('auth.php');
               </tbody>
             </table><br>
             <a rel="facebox" class = "btn btn-primary" href=" checkout.php?pt=<?php echo $_GET['id']?>&invoice=<?php echo $_GET['invoice']?>&total=<?php echo $fgfg ?>&cashier=<?php echo $session_cashier_name?>&p_amount=<?php echo $ccc?>&profit=<?php echo $totalProfit ?>">Check Out</a>
-
-
             <div class="clearfix"></div>
           </div>
 
