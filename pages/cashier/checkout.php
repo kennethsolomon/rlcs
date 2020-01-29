@@ -114,7 +114,11 @@ if($asas=='cash') {
 <?php
 }
 ?>
+<<<<<<< HEAD
 <input type="checkbox" name="isChecked" value="isChecked"/> Hide Computation Details?
+=======
+<input type="checkbox" name="isChecked" value="isChecked"/> Show Computation Details?
+>>>>>>> bd097bf0a0e57e121e60e789b3b1b7c527a5cf5d
 <input class="btn btn-primary btn-block" type="submit" value="save" style="width: 268px; margin-top: 10px" />
 </div>
 </form>
