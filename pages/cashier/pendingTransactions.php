@@ -1,6 +1,6 @@
 <?php 
 include('connect.php');
 $getInvoice=$_GET['pendingTransactionList'];
-$projectStatus=$_GET['projectStatus'];
-        header("location: sales_receivable.php?id=$projectStatus&invoice=$getInvoice");
+$cashierStatus=$_GET['cashierStatus'];
+        header("location: sales.php?id=$cashierStatus&invoice=$getInvoice");
 ?>

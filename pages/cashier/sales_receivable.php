@@ -59,7 +59,7 @@ require_once('auth.php');
               <h1 class="page-header">Payment | <?php echo $_GET['id']; ?> </h1>
             </div>
 
-            <form action="pendingTransactions.php" method="get" id="pendingTransactions" name="pendingTransactions" class = "form-group" >
+            <form action="pendingReceivableTransactions.php" method="get" id="pendingTransactions" name="pendingTransactions" class = "form-group" >
               <label>Pending Transactions: </label>
               <input type="hidden" name="projectStatus" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <select  name="pendingTransactionList"  id="pendingTransactionList" style="width:150px;" class="chzn-select" onchange="pendingTransactions.submit()">
