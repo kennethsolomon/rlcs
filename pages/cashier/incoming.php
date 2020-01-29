@@ -25,7 +25,14 @@ $qtyleft=$row['qty_left'];
 $cost=$row['cost'];
 }
 
-$profit =abs((($cost - $asasa) * $c))  ;  
+$result = $db->prepare("SELECT * FROM sales_order WHERE invoice= :userid");
+$result->bindParam(':userid', $a);
+$result->execute();
+for($i=0; $row = $result->fetch(); $i++){
+$transactionId = $row['transaction_id'];
+}
+
+$profit = abs((($cost - $asasa) * $c))  ;  
 
 //edit qty
 $sql = "UPDATE products 
@@ -38,16 +45,25 @@ $d=$asasa*$c;
 $z=$qtyleft-$c;
 $vat=$d*$r;
 $total=$vat+$d;
+
 // query
 if($w == 'cash'){
     $sql = "INSERT INTO sales_order (invoice,product,qty,amount,name,price,discount,category,date,omonth,oyear,qtyleft,dname,vat,total_amount, profit, status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o, :profit, :cashierCashStatus)";
     $q = $db->prepare($sql);
     $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierCashStatus'=>$cashierCashStatus));
-    header("location: sales.php?id=$w&invoice=$a");
+    $url="sales.php?id=$w&invoice=$a";
+    $url=str_replace(PHP_EOL, '', $url);
+    header("Location: $url");
 } else if ($w == 'credit'){
     $sql = "INSERT INTO sales_order (invoice,product,qty,amount,name,price,discount,category,date,omonth,oyear,qtyleft,dname,vat,total_amount, profit, status) VALUES (:a,:b,:c,:d,:e,:f,:g,:h,:i,:j,:k,:l,:m,:n,:o, :profit, :cashierCreditStatus)";
     $q = $db->prepare($sql);
     $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$cost,':e'=>$name,':f'=>$asasa,':g'=>$discount,':h'=>$categ,':i'=>$date,':j'=>$month,':k'=>$year,':l'=>$z,':m'=>$dname,':n'=>$vat,':o'=>$total,':profit'=>$profit,':cashierCreditStatus'=>$cashierCreditStatus));
-    header("location: sales.php?id=$w&invoice=$a");
+    $url="sales.php?id=$w&invoice=$a";
+    $url=str_replace(PHP_EOL, '', $url);
+    header("Location: $url");
+    
 }
 ?>
+
+transactionId=
+<br/><b>Notice</b>:Undefinedindex:transactionIdin<b>C:\xampp\htdocs\RLCS\pages\cashier\sales.php</b>%20on%20line%20<b>109</b><br%20/>
