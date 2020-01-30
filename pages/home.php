@@ -67,50 +67,7 @@ require_once('auth.php');
 				
 				</div>
 
-				<!-- /.col-lg-12 -->
 			</div>
-
-				<!-- <div id="myCarousel" class="carousel slide">
-				
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-						<li data-target="#myCarousel" data-slide-to="4"></li>
-
-					</ol>
-
-				
-					<center>
-						<div class="carousel-inner" role="listbox">
-							<div class="item active">
-								<img src="pics/1.jpg" width="45%" height="10px" >
-							</div>
-							<div class="item">
-								<img src="pics/2.jpg" width="45%" height="10px">
-							</div>
-							<div class="item">
-								<img src="pics/3.jpg" width="45%" height="10px">
-							</div>
-							<div class="item">
-								<img src="pics/6.jpg" width="45%" height="10px">
-							</div>
-							<div class="item">
-								<img src="pics/7.jpg" width="45%" height="10px">
-							</div>
-						</div>
-					</center>
-
-				
-					<a class="left carousel-control" href="#myCarousel" data-slide="prev" >
-						<span class="icon-prev"></span>
-					</a>
-					<a class="right carousel-control" href="#myCarousel" data-slide="next">
-						<span class="icon-next"></span>
-					</a>
-				</div> -->
-	
 
 				<div id="orayt">
 					<a class="list-group-item">
