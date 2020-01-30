@@ -10,7 +10,7 @@
 	$qty = $row['qty'];
 	$price = $row['price'];
 	$amount = $row['amount'];
-	$profit = ($price - $amount) * $qty;  
+	
 ?>
 
 	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +29,8 @@
 		<input type="hidden" name="transactionId" value="<?php echo $transactionId; ?>" />
 		<input type="hidden" name="typeOfTransaction" value="<?php echo $typeOfTransaction; ?>" />
 		<input type="hidden" name="qty" value="<?php echo $qty; ?>" />
+		<input type="hidden" name="price" value="<?php echo $price; ?>" />
+		<input type="hidden" name="amount" value="<?php echo $amount; ?>" />
 		<input type="hidden" name="profit" value="<?php echo $profit; ?>" />
 		<input type="hidden" name="invoice" value="<?php echo $invoice; ?>" />
 		<span>Price : </span>

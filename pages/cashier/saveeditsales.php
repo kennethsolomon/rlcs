@@ -3,10 +3,13 @@
 	$transactionId=$_POST['transactionId'];
 	$price=$_POST['price'];
 	$qty=$_POST['qty'];
-	$profit=$_POST['profit'];
+	$price=$_POST['price'];
+	$amount=$_POST['amount'];
 	$typeOfTransaction=$_POST['typeOfTransaction'];
 	$invoice=$_POST['invoice'];
 	$updatedTotalAmount = $price * $qty;
+
+	$profit = ($price - $amount) * $qty;  
 	//edit qty
 	$sql = "UPDATE sales_order
 			SET price=?, total_amount=?, profit=?

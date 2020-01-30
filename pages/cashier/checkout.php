@@ -91,7 +91,7 @@ background-repeat:no-repeat;
 <input type="hidden" name="date" value="<?php echo date("m/d/Y"); ?>" readonly /><br><br>
 <!-- <input type="hidden" name="time" value="<?php echo time("h:i A"); ?>" readonly/><br><br> -->
 <input type="hidden" name="invoice" value="<?php echo $_GET['invoice']; ?>" />
-<input type="text" name="profit" value="<?php echo $_GET['profit']; ?>" />
+<input type="hidden" name="profit" value="<?php echo $_GET['profit']; ?>" />
 <input type="hidden" name="amount" value="<?php echo $_GET['total']; ?>" />
 <input type="hidden" name="ptype" value="<?php echo $_GET['pt']; ?>" />
 <input type="hidden" name="cashier" value="<?php echo $_GET['cashier']; ?>" />
