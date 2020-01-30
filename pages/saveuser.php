@@ -6,7 +6,12 @@ $b = $_POST['pass'];
 $c = $_POST['name'];
 $d = $_POST['post'];
 
-if($d == 'Project Manager'){
+if($d == 'Stock Administrator'){
+    $sql = "INSERT INTO user (username,password,name,position) VALUES (?,?,?,?)";
+    $q = $db->prepare($sql);
+    $q->execute(array($a,$b,$c,$d));
+    header("location: home.php");
+}else if($d == 'Admin Staff'){
     $sql = "INSERT INTO user (username,password,name,position) VALUES (?,?,?,?)";
     $q = $db->prepare($sql);
     $q->execute(array($a,$b,$c,$d));
