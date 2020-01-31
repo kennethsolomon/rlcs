@@ -132,7 +132,8 @@ if($asas=='cash') {
 ?><input required type="text" name="cash" placeholder="Cash" style="width: 268px; margin-bottom: 15px;" /><br>
 <?php
 }
-?><input class="btn btn-primary btn-block" type="submit" value="save" style="width: 268px;" />
+?>
+<input class="btn btn-primary btn-block" type="submit" value="save" style="width: 268px;" />
 </div>
 </form>
 </body>

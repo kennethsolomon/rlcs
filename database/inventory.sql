@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2020 at 02:16 AM
+-- Generation Time: Jan 31, 2020 at 08:05 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.31
 
@@ -91,7 +91,9 @@ INSERT INTO `collection` (`transaction_id`, `date`, `cmonth`, `cyear`, `name`, `
 (33, '01/03/2020', 'January', '2020', 'RS-392362', 'IN-2020229', '234', 'Balance', 1),
 (34, '01/03/2020', 'January', '2020', 'RS-392362', 'IN-33233', '1', 'Paid', 0),
 (35, '01/04/2020', 'January', '2020', 'RS-0833223', 'IN-2023033', '11550', 'PAID', 0),
-(36, '01/04/2020', 'January', '2020', 'RS-42250223', 'IN-03347202', '50', 'PAID', 0);
+(36, '01/04/2020', 'January', '2020', 'RS-42250223', 'IN-03347202', '50', 'PAID', 0),
+(37, '01/29/2020', 'January', '2020', 'RS-3353', 'IN-237302', '600', 'PAID', 0),
+(38, '01/31/2020', 'January', '2020', 'RS-00323033', 'IN-4332242', '235', 'PAID', 0);
 
 -- --------------------------------------------------------
 
@@ -259,9 +261,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_code`, `product_name`, `description_name`, `unit`, `cost`, `total_cost`, `price`, `supplier`, `qty_left`, `category`, `date_delivered`, `expiration_date`) VALUES
-(14, 'P-0303532', 'Gravel', 'G1', 'Per m3', '500', 530500, '1000', 'Legazpi', 1057, 'Gravel', '2019-09-16', ''),
-(16, 'P-22520330', 'Republic Cement', 'Republic', 'Per Pieces', '225', 413550, '235', 'SORCOM', 1839, 'Cement', '2019-09-17', '2020-01-04'),
-(17, 'P-0322223', 'Black Sand', 'Black Sand', 'Per m3', '300', 0, '700', 'Legazpi', 71, 'Black Sand', '2019-10-09', ''),
+(14, 'P-0303532', 'Gravel', 'G1', 'Per m3', '500', 530500, '1000', 'Legazpi', 1049, 'Gravel', '2019-09-16', ''),
+(16, 'P-22520330', 'Republic Cement', 'Republic', 'Per Pieces', '225', 413550, '235', 'SORCOM', 1840, 'Cement', '2019-09-17', '2020-01-04'),
+(17, 'P-0322223', 'Black Sand', 'Black Sand', 'Per m3', '300', 0, '700', 'Legazpi', 72, 'Black Sand', '2019-10-09', ''),
 (23, 'P-233203', 'Portland Premium', 'APO', 'Per Pieces', '215', 0, '230', 'SORCOM', 454, 'Cement', '2019-12-27', ''),
 (24, 'P-84022', 'Legazpi Sand', 'Filtered Sand', 'Per m3', '300', 67500, '700', 'Legazpi', 179, 'Black Sand', '2020-01-03', ''),
 (25, 'P-26232309', 'Concrete Hallow Blocks', 'CHB 4', 'Per Pieces', '7', 87500, '10', 'Hollow Blocks', 12394, 'Gravel', '', '2020-01-04');
@@ -466,7 +468,7 @@ INSERT INTO `sales` (`transaction_id`, `invoice_number`, `cashier`, `date`, `typ
 (98, 'RS-3379803', 'Cashier', '10/26/2019', 'credit', '', '2019-10-28', 'Mark Jason Lagco', '8300', '8300', '', 'October', '2019', '2800', '336', 'Guinlajon, Sorsogon City', '09509269930', 0),
 (99, 'RS-0344', 'Cashier', '12/27/2019', 'credit', '14700', 'paid', 'Project Rangas', '0', '14700', '', 'December', '2019', '14700', '1764', 'Guinlajon Sorsogon City', '09509269930', 0),
 (100, 'RS-42250223', 'Cashier', '01/04/2020', 'credit', '1050', 'PAID', 'Project Rangas', '0', '1050', '', 'December', '2019', '1050', '126', '', '', 0),
-(101, 'RS-00323033', 'Cashier', '12/11/2019', 'credit', '', '2019-12-12', 'Project Rangas', '235', '235', '', 'December', '2019', '235', '28.2', '', '', 0),
+(101, 'RS-00323033', 'Cashier', '01/31/2020', 'credit', '235', 'PAID', 'Project Rangas', '0', '235', '', 'December', '2019', '235', '28.2', '', '', 0),
 (102, 'RS-230032', 'Cashier', '12/11/2019', 'cash', '1050', '', 'Project Gabao', '', '', '2500', 'December', '2019', '1050', '126', '', '', 0),
 (103, 'RS-33332333', 'Cashier', '12/11/2019', 'credit', '235', 'paid', 'Project Gabao', '0', '235', '', 'December', '2019', '235', '28.2', '', '', 0),
 (104, 'RS-0283522', 'Cashier', '12/22/2019', 'credit', '1170', 'paid', 'Mark Jason Lagco', '0', '1170', '', 'December', '2019', '235', '28.2', 'Guinlajon Sorsogon City', '09509269930', 0),
@@ -515,7 +517,17 @@ INSERT INTO `sales` (`transaction_id`, `invoice_number`, `cashier`, `date`, `typ
 (147, 'RS-30220327', 'Cashier', '01/28/2020', 'cash', '7450', '', 'Frederick Lagco', '', '', '8000', 'January', '2020', '215', '25.8', 'Guinlajon, Sorsogon City', '09109073342', 3650),
 (148, 'RS-233820', 'Cashier', '01/28/2020', 'credit', '', '2020-01-21', 'Mark Jason Lagco', '235', '235', '', 'January', '2020', '225', '27', 'Guinlajon, Sorsogon City', '09509269930', 10),
 (149, 'RS-230352', 'Cashier', '01/28/2020', 'cash', '700', '', 'Mark Jason Lagco', '', '', '1000', 'January', '2020', '300', '36', 'Guinlajon, Sorsogon City', '09509269930', 400),
-(150, 'RS-2302433', 'Cashier', '01/28/2020', 'cash', '725', '', 'Domingo Lagco', '', '', '800', 'January', '2020', '300', '36', 'Guinlajon, Sorsogon City', '09509269930', 415);
+(150, 'RS-2302433', 'Cashier', '01/28/2020', 'cash', '725', '', 'Domingo Lagco', '', '', '800', 'January', '2020', '300', '36', 'Guinlajon, Sorsogon City', '09509269930', 415),
+(151, 'RS-3353', 'Cashier', '01/29/2020', 'credit', '600', 'PAID', 'Cleveland Cavaliers', '0', '600', '', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '09509249903', 500),
+(152, 'RS-333005', 'Cashier', '01/29/2020', 'cash', '600', '', 'kobe bryant', '', '', '1000', 'January', '2020', '500', '60', 'Pangpang, Sorsogon City', '09509049003', 500),
+(153, 'RS-77200232', 'Cashier', '01/29/2020', 'cash', '600', '', 'Minesota Timberwolves', '', '', '1000', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '09409090032', 100),
+(154, 'RS-9232320', 'Cashier', '01/31/2020', 'project_receivable', '', '', 'Project Rangas', '600', '600', '', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '09509269930', 100),
+(155, 'RS-70393200', 'Cashier', '01/31/2020', 'project_receivable', '', '', 'Project Rangas', '235', '235', '', 'January', '2020', '225', '27', 'Guinlajon, Sorsogon City', '09509090032', 10),
+(156, 'RS-322023', 'Cashier', '01/31/2020', 'credit', '', '2020-01-31', 'Mark Jason Lagco', '1000', '1000', '', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '12312', 500),
+(157, 'RS-303923', 'Cashier', '01/31/2020', 'project_receivable', '', '', 'Project Rangas', '600', '600', '', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '09509269930', 100),
+(158, 'RS-750003', 'Cashier', '01/31/2020', 'project_receivable', '', '', 'Project Rangas', '235', '235', '', 'January', '2020', '225', '27', 'qwe', '21', 10),
+(159, 'RS-2530302', 'Cashier', '01/31/2020', 'project_receivable', '', '', 'Project Rangas', '1000', '1000', '', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '123', 500),
+(160, 'RS-34623233', 'Cashier', '01/31/2020', 'project_receivable', '', '', 'Project Rangas', '1000', '1000', '', 'January', '2020', '500', '60', 'Guinlajon, Sorsogon City', '123', 500);
 
 -- --------------------------------------------------------
 
@@ -670,8 +682,6 @@ INSERT INTO `sales_order` (`transaction_id`, `invoice`, `product`, `qty`, `amoun
 (308, 'RS-2222324', 'P-0322223', '1', '300', 'Black Sand', '700', '0', 'Black Sand', '01/26/2020', 'January', '2020', '77', 'Black Sand', '0', '700', 400, ''),
 (319, 'RS-6228725', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/26/2020', 'January', '2020', '1056', 'G1', '0', '1000', 500, ''),
 (347, 'RS-203322', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/27/2020', 'January', '2020', '1842', 'Republic', '0', '235', 10, ''),
-(355, 'RS-7423286', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/27/2020', 'January', '2020', '1843', 'Republic', '0', '235', 10, ''),
-(356, 'RS-7423286', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/27/2020', 'January', '2020', '1843', 'Republic', '0', '235', 10, 'pending_credit'),
 (360, 'RS-6033223', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/28/2020', 'January', '2020', '1842', 'Republic', '0', '235', 10, ''),
 (361, 'RS-0323000', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/28/2020', 'January', '2020', '1841', 'Republic', '0', '235', 10, ''),
 (362, 'RS-66320', 'P-84022', '1', '300', 'Legazpi Sand', '700', '0', 'Black Sand', '01/28/2020', 'January', '2020', '179', 'Filtered Sand', '0', '700', 400, ''),
@@ -680,11 +690,19 @@ INSERT INTO `sales_order` (`transaction_id`, `invoice`, `product`, `qty`, `amoun
 (366, 'RS-30220327', 'P-0322223', '5', '300', 'Black Sand', '500', '0', 'Black Sand', '01/28/2020', 'January', '2020', '74', 'Black Sand', '0', '2500', 2000, ''),
 (367, 'RS-30220327', 'P-233203', '10', '215', 'Portland Premium', '225', '0', 'Cement', '01/28/2020', 'January', '2020', '455', 'APO', '0', '2250', 150, ''),
 (368, 'RS-233820', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/28/2020', 'January', '2020', '1840', 'Republic', '0', '235', 10, ''),
-(369, 'RS-3353', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/28/2020', 'January', '2020', '1839', 'Republic', '0', '235', 10, 'pending_credit'),
-(370, 'RS-77200232', 'P-0322223', '1', '300', 'Black Sand', '700', '0', 'Black Sand', '01/28/2020', 'January', '2020', '73', 'Black Sand', '0', '700', 400, 'pending_cash'),
 (371, 'RS-230352', 'P-0322223', '1', '300', 'Black Sand', '700', '0', 'Black Sand', '01/28/2020', 'January', '2020', '72', 'Black Sand', '0', '700', 400, ''),
 (372, 'RS-2302433', 'P-233203', '1', '215', 'Portland Premium', '225', '0', 'Cement', '01/28/2020', 'January', '2020', '454', 'APO', '0', '225', 15, ''),
-(373, 'RS-2302433', 'P-0322223', '1', '300', 'Black Sand', '500', '0', 'Black Sand', '01/28/2020', 'January', '2020', '71', 'Black Sand', '0', '500', 400, '');
+(373, 'RS-2302433', 'P-0322223', '1', '300', 'Black Sand', '500', '0', 'Black Sand', '01/28/2020', 'January', '2020', '71', 'Black Sand', '0', '500', 400, ''),
+(375, 'RS-3353', 'P-0303532', '1', '500', 'Gravel', '600', '0', 'Gravel', '01/29/2020', 'January', '2020', '1056', 'G1', '0', '600', 500, ''),
+(376, 'RS-333005', 'P-0303532', '1', '500', 'Gravel', '600', '0', 'Gravel', '01/29/2020', 'January', '2020', '1055', 'G1', '0', '600', 500, ''),
+(380, 'RS-77200232', 'P-0303532', '1', '500', 'Gravel', '600', '0', 'Gravel', '01/29/2020', 'January', '2020', '1054', 'G1', '0', '600', 100, ''),
+(385, 'RS-9232320', 'P-0303532', '1', '500', 'Gravel', '600', '0', 'Gravel', '01/31/2020', 'January', '2020', '1053', 'G1', '0', '600', 100, ''),
+(386, 'RS-70393200', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/31/2020', 'January', '2020', '1841', 'Republic', '0', '235', 10, ''),
+(387, 'RS-322023', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/31/2020', 'January', '2020', '1052', 'G1', '0', '1000', 500, ''),
+(388, 'RS-303923', 'P-0303532', '1', '500', 'Gravel', '600', '0', 'Gravel', '01/31/2020', 'January', '2020', '1051', 'G1', '0', '600', 100, ''),
+(389, 'RS-750003', 'P-22520330', '1', '225', 'Republic Cement', '235', '0', 'Cement', '01/31/2020', 'January', '2020', '1840', 'Republic', '0', '235', 10, ''),
+(390, 'RS-2530302', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/31/2020', 'January', '2020', '1050', 'G1', '0', '1000', 500, ''),
+(391, 'RS-34623233', 'P-0303532', '1', '500', 'Gravel', '1000', '0', 'Gravel', '01/31/2020', 'January', '2020', '1049', 'G1', '0', '1000', 500, '');
 
 -- --------------------------------------------------------
 
@@ -729,9 +747,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `name`, `position`) VALUES
-(1, 'admin', 'admin123', 'Admin', 'Admin'),
-(2, 'projectM', 'projectM', 'projectM', 'Project Manager'),
-(3, 'test', 'test', 'Test Manager', 'Project Manager');
+(1, 'admin', 'admin123', 'Admin', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -823,13 +839,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cashier`
 --
 ALTER TABLE `cashier`
-  MODIFY `cashier_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cashier_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `collection`
 --
 ALTER TABLE `collection`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -877,13 +893,13 @@ ALTER TABLE `purchases_item`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
 -- AUTO_INCREMENT for table `sales_order`
 --
 ALTER TABLE `sales_order`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=374;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=392;
 
 --
 -- AUTO_INCREMENT for table `supliers`

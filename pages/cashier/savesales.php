@@ -43,7 +43,7 @@ if($d=='project_receivable') {
 	$sql = "INSERT INTO sales (invoice_number,cashier,date,type,total_amount,name,month,year,balance,p_amount,vat,address, contact_number, profit) VALUES (:a,:b,:c,:d,:e,:g,:h,:i,:k,:j,:l, :m, :z, :profit)";
 	$q = $db->prepare($sql);
 	$q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$d,':e'=>$e,':g'=>$cname,':h'=>$dmonth,':i'=>$dyear,':k'=>$e,':j'=>$pamount,':l'=>$vat,':m'=>$caddress, ':z'=>$ccontact, ':profit'=>$profit));
-	header("location: preview.php?invoice=$a");
+	header("location: preview.php?invoice=$a&isChecked=$isChecked");
 	exit();
 }
 if($d=='cash') {

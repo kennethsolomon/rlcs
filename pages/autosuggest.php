@@ -10,7 +10,7 @@
 			
 			if(strlen($queryString) >0) {
 				$c='credit';
-				$query = $db->query("SELECT *  FROM sales WHERE type='$c' AND name LIKE '$queryString%' LIMIT 10");
+				$query = $db->query("SELECT *  FROM sales WHERE type='$c' AND name LIKE '$queryString%' AND balance != 0 LIMIT 10");
 				if($query) {
 				echo '<ul>';
 					while ($result = $query ->fetch_object()) {

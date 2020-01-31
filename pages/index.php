@@ -26,7 +26,7 @@
 	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-	<body>
+	
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,8 +39,12 @@
 
     </head>
 
-    <body>
+    <body style="background-image: url('background.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;"	>
+			
+		
     	<?php
+		
+
     	function createRandomPassword() {
     		$chars = "003232303232023232023456789";
     		srand((double)microtime()*1000000);
@@ -85,11 +89,11 @@
     									<input type="password" class="form-control" name="pass" placeholder="Password">
     								</div>
     								<div class="form-group">
-    									<button class="btn btn-block btn-success" id = "btn-login" name = "btn-login">Log in</button>
+    									<button   class="btn btn-block btn-primary" id = "btn-login" name = "btn-login" >Log in</button>
     								</div>
     								<div class="form-group" id="alert-msg">
     								</div>
-
+									
     							</form>
     						</div>
     						<div id="menu2" class="tab-pane fade">
@@ -102,7 +106,7 @@
     									<input type="password" class="form-control" name="cashier_pass" placeholder="Password">
     								</div>
     								<div class="form-group">
-    									<button class="btn btn-block btn-success" id = "btn" name = "btn">Log in</button>
+    									<button class="btn btn-block btn-primary" id = "btn" name = "btn">Log in</button>
     								</div>
     								<div class="form-group" id="alert-msg1">
     								</div>

@@ -25,6 +25,7 @@ $finalcode='RS-'.createRandomPassword();
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			<span class="sr-only">Toggle navigation</span>
@@ -32,7 +33,7 @@ $finalcode='RS-'.createRandomPassword();
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a style="font-size: 20px;" class="navbar-brand" href="home.php"><b>Ruffer Lumber and Construction Supply<b></a>
+		<a style="font-size: 20px" class="navbar-brand" href="home.php"><b>Ruffer Lumber and Construction Supply<b></a>
 	</div>
 	<!-- /.navbar-header -->
 
