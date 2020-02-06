@@ -226,8 +226,8 @@ for($i=0; $row = $result->fetch(); $i++){
 				</table>
 				</center>
 				<p style="text-align: left;font-size: 15px;margin-left:	50px"><b>Prepared by: <?php echo $cashier ?>
-				<span style="font-size: 15px;margin-left:30px;align-right;text-align: left"> Approved by: __________________
-				<tr style="font-size: 15px;align-left;text-align: left"> Received by: __________________
+				<span style="font-size: 15px;margin-left:30px;align-right;text-align: left"> Delivered by: __________________
+				<p style="font-size: 15px;margin-right:	20px;text-align: Right"> Received by: ______________
 				
 			</div>
 									

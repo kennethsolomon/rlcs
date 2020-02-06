@@ -85,7 +85,7 @@ require_once('auth.php');
         <div class="row">
             <div class="col-lg-12">
             <!-- <img src="rlcs.png" alt="Smiley face" height="70" width="100%" style="text-align:right; margin-top:10px"> -->
-                <h1 class="page-header"> List of Product Expired</h1>
+                <h1 class="page-header"> List of Product Lose</h1>
             </div>
                 <form method="post" action="">
                       <label>

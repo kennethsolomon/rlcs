@@ -25,7 +25,7 @@
 <span>Product Code : </span><input type="text" name="code" class = "form-control" value="<?php echo $row['product_code']; ?>"readonly />
 <span>Brand Name : </span><input type="text" name="bname" class = "form-control" value="<?php echo $row['product_name']; ?>" />
 <span>Description Name : </span><input type="text" name="dname" class = "form-control" value="<?php echo $row['description_name']; ?>" />
-<span>Cost : </span><input type="text" name="cost" class = "form-control" value="<?php echo $row['cost']; ?>" <span>Price : </span>
+<span>Cost : </span><input type="text" name="cost" step="0.01" class = "form-control" value="<?php echo $row['cost']; ?>" <span>Price : </span>
 <input type="text" name="price" class = "form-control" value="<?php echo $row['price']; ?>" />
 <span>Supplier : </span>
 <select name="supplier" class = "form-control" >
@@ -42,13 +42,21 @@
 	?>
 </select>
 <span>Category: </span>
-<select name="categ" class = "form-control" >
-                            <option>Gravel</option>
+<select name="categ" required class = "form-control" >
+							<option></option>
+							<option>Gravel</option>
                             <option>Black Sand</option>
+                            <option>Base Course</option>
+                            <option>Boulder</option>
                             <option>Coco Lumber</option>
+                            <option>Good Lumber</option>
                             <option>Cement</option>
-                            <option>Concrete Hallow Blocks</option>
+                            <option>Concrete Hollow Blocks</option>
                             <option>Round Steel Bar</option>
+                            <option>Tie Wire</option>
+                            <option>Concrete Nail</option>
+                            <option>CWN</option>
+							<option>Project Materials</option>
                             </select>
 <span>&nbsp;</span><input class="btn btn-primary btn-block" type="submit" class = "form-control" value="Update" />
 </div>

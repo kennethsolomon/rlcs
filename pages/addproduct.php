@@ -10,14 +10,22 @@
                     <form action="saveproduct.php" method="post" class = "form-group" >
                         <div id="ac">
                             <span>Category: </span>
-                            <select name="categ" class = "form-control" >
+                            <select name="categ" required class = "form-control" >
+                            <option></option>
                             <option>Gravel</option>
                             <option>Black Sand</option>
+                            <option>Base Course</option>
+                            <option>Boulder</option>
                             <option>Coco Lumber</option>
                             <option>Good Lumber</option>
                             <option>Cement</option>
                             <option>Concrete Hollow Blocks</option>
                             <option>Round Steel Bar</option>
+                            <option>Tie Wire</option>
+                            <option>Concrete Nail</option>
+                            <option>CWN</option>
+                            <option>Project Materials</option>
+                            
                             </select>
                             <span>Product Code : </span><input type="text" name="code" value = "<?php echo $pcode ?>" class = "form-control"readonly />
                             <span>Brand Name : </span><input type="text" name="bname" class = "form-control" />
@@ -29,7 +37,7 @@
                             <option>Per m3</option>
                             <option>Per Kilo</option>
                             </select>
-                            <span>Cost : </span><input type="number" name="cost" class = "form-control" />
+                            <span>Cost : </span><input type="number" name="cost" step="0.01" class = "form-control" />
                             <span>SRP : </span><input type="number" name="price" step="0.01"  class = "form-control" />
                             <span>Supplier : </span>
                             <select name="supplier" class = "form-control">

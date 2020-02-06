@@ -161,7 +161,7 @@ require_once('auth.php');
                         </table>
 
                     <a href="" onclick="window.print()" class="btn btn-primary"><i class="icon-print icon-large"></i> Print</a>
-                    <a href= "product_exp.php" class = "btn btn-primary">View Product Expiration</a>
+                    <a href= "product_exp.php" class = "btn btn-primary">Pull Out Products</a>
                         <div class="clearfix"></div>
                     </div>
                   

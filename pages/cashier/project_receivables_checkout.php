@@ -107,7 +107,7 @@ background-repeat:no-repeat;
                 for($i=0; $row = $result->fetch(); $i++){
                   ?>
                   <option value="<?php echo $row['customer_name'];?>">
-                    <?php echo $row['customer_name']; ?>
+                    <?php echo $row['first_name']; ?>
                   </option>
                 } 
                   <?php
@@ -133,7 +133,9 @@ if($asas=='cash') {
 <?php
 }
 ?>
+<input type="checkbox" name="isChecked" value="isChecked"/> Hide Computation Details?
 <input class="btn btn-primary btn-block" type="submit" value="save" style="width: 268px;" />
+
 </div>
 </form>
 </body>
