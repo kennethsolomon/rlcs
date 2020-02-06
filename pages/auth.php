@@ -1,20 +1,19 @@
 <?php
-	include 'connect.php';
-	//Start session
-	session_start();
-	
-	//Check whether the session variable SESS_MEMBER_ID is present or not
-	if(!isset($_SESSION['SESS_MEMBER_ID']) || (trim($_SESSION['SESS_MEMBER_ID']) == '')) {
-		header("location: index.php");
-		exit();
-	}
+include 'connect.php';
+//Start session
+session_start();
 
-	$session_id  = $_SESSION['SESS_MEMBER_ID'];
+//Check whether the session variable SESS_MEMBER_ID is present or not
+if (!isset($_SESSION['SESS_MEMBER_ID']) || (trim($_SESSION['SESS_MEMBER_ID']) == '')) {
+	header("location: index.php");
+	exit();
+}
 
-	$query = $db->prepare("SELECT * FROM user WHERE id = ?");
-	$query->execute(array($session_id));
-	$row = $query->fetch();
+$session_id  = $_SESSION['SESS_MEMBER_ID'];
 
-	$session_admin_name = $row['name'];
-	$session_admin_position = $row['position'];
-?>
+$query = $db->prepare("SELECT * FROM user WHERE id = ?");
+$query->execute(array($session_id));
+$row = $query->fetch();
+
+$session_admin_name = $row['name'];
+$session_admin_position = $row['position'];

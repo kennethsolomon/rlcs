@@ -1,20 +1,19 @@
 <?php
-	include 'connect.php';
+include 'connect.php';
 
-	//Start session
-	session_start();
-	
-	//Check whether the session variable SESS_MEMBER_ID is present or not
-	if(!isset($_SESSION['SESS_MEMBER_ID']) || (trim($_SESSION['SESS_MEMBER_ID']) == '')) {
-		header("location: index.php");
-		exit();
-	}
+//Start session
+session_start();
 
-	$session_id  = $_SESSION['SESS_MEMBER_ID'];
+//Check whether the session variable SESS_MEMBER_ID is present or not
+if (!isset($_SESSION['SESS_MEMBER_ID2']) || (trim($_SESSION['SESS_MEMBER_ID2']) == '')) {
+	header("location: /rlcs/pages/index.php");
+	exit();
+}
 
-	$query = $db->prepare("SELECT * FROM cashier WHERE cashier_id = ?");
-	$query->execute(array($session_id));
-	$row = $query->fetch();
+$session_id  = $_SESSION['SESS_MEMBER_ID2'];
 
-	$session_cashier_name = $row['cashier_name'];
-?>
+$query = $db->prepare("SELECT * FROM cashier WHERE cashier_id = ?");
+$query->execute(array($session_id));
+$row = $query->fetch();
+
+$session_cashier_name = $row['cashier_name'];
