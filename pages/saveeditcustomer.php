@@ -15,5 +15,3 @@ $sql = "UPDATE customer
 $q = $db->prepare($sql);
 $q->execute(array($a,$b,$c,$d,$id));
 header("location: customer.php");
-
-?>
