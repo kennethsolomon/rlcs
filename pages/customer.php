@@ -80,7 +80,7 @@ require_once('auth.php');
                                     <div class="modal-body">
                                         <form action="savecustomer.php" method="post" class="form-group">
                                             <div id="ac">
-                                                <span>First Name : </span><input type="text" name="fname" class="form-control" />
+                                                <span>Name : </span><input type="text" name="fname" class="form-control" />
                                                 <span>Address : </span><input type="text" name="address" class="form-control" />
                                                 <span>Contact : </span><input type="text" name="contact" class="form-control" />
                                                 <span>Membership No. : </span><input type="text" name="memno" class="form-control" />

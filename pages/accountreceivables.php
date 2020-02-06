@@ -12,7 +12,7 @@ require_once('auth.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
+
     <title>RLCS</title>
 
     <link rel="shortcut icon" href="logoc.jpg">
@@ -24,7 +24,7 @@ require_once('auth.php');
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-    
+
     <!-- DataTables CSS -->
     <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -39,26 +39,26 @@ require_once('auth.php');
     <link rel="stylesheet" type="text/css" media="print" href="print.css" />
 
     <link rel="stylesheet" type="text/css" href="tcal.css" />
-    
+
     <script type="text/javascript" src="tcal.js"></script>
-  
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
-        
-        <link href="src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-        <script src="lib/jquery.js" type="text/javascript"></script>
-        <script src="src/facebox.js" type="text/javascript"></script>
-        <script type="text/javascript">
-          jQuery(document).ready(function($) {
+
+
+    <link href="src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="lib/jquery.js" type="text/javascript"></script>
+    <script src="src/facebox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
             $('a[rel*=facebox]').facebox({
-              loadingImage : 'src/loading.gif',
-              closeImage   : 'src/closelabel.png'
-          })
+                loadingImage: 'src/loading.gif',
+                closeImage: 'src/closelabel.png'
+            })
         })
     </script>
 
@@ -67,23 +67,23 @@ require_once('auth.php');
 <body>
 
 
-    <?php include('navfixed.php');?>    
+    <?php include('navfixed.php'); ?>
 
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                <!-- <img src="rlcs.png" alt="Smiley face" height="70" width="100%" style="text-align:right; margin-top:10px"> -->
+                    <!-- <img src="rlcs.png" alt="Smiley face" height="70" width="100%" style="text-align:right; margin-top:10px"> -->
                     <h1 class="page-header"> Accounts Receivables Report</h1>
                 </div>
             </div>
 
             <!-- Search -->
-                <label style="font-size:20px; margin-right: 2px">Search </label>
-                <form method="post" action="">
-                      <label>
-                      <select name = "dmonth" class="form-control input-sm">
+            <label style="font-size:20px; margin-right: 2px">Search </label>
+            <form method="post" action="">
+                <label>
+                    <select name="dmonth" class="form-control input-sm">
                         <option value=""></option>
                         <option value="January">January</option>
                         <option value="February">February</option>
@@ -97,256 +97,255 @@ require_once('auth.php');
                         <option value="October">October</option>
                         <option value="November">November</option>
                         <option value="December">December</option>
-                        
-                      </select>
-                      </label>
-                    <label><input name="dyear" id="dyear" type="number" class="form-control input-sm" placeholder="" aria-controls="dataTables-example" style="width: 100px;"></label>
-                   <!-- <label><input type="button" value="Search" class="form-control" placeholder="" aria-controls="dataTables-example"></label> -->
-                   <label><button class="form-control"  name="submitdate" >Submit</button></label>
-                   <label style="margin-left:495px">
-                   <input style="width: 100px; "name="dailydate" id="dailydate" class="datepicker" placeholder="mm/dd/yyyy" data-date-format="mm/dd/yyyy">
-                   <!-- <input id="dailydate" name="dailydate" type="text" placeholder="Due Date" style="width: 150px; margin-bottom: 15px; margin-left: 170px"  /> -->
-                   </label>
-                   <label><button class="form-control"  name="accountduedate" >Daily Reports</button></label>
-                    </div>
-                </form>
 
-            <div id="maintable">
-                <div style="margin-top: -19px; margin-bottom: 21px;">
-                </div>
-                    <table border="1" cellpadding="5" width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                            <tr>
-                                 <th class="thColor"> Transaction ID </th>
-                                <th> Date </th>
-                                <th> Customer Name </th>
-                                <th> Invoice Number </th>
-                                <th> Overall Balance </th>
-                                <th> Due Date </th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    </select>
+                </label>
+                <label><input name="dyear" id="dyear" type="number" class="form-control input-sm" placeholder="" aria-controls="dataTables-example" style="width: 100px;"></label>
+                <!-- <label><input type="button" value="Search" class="form-control" placeholder="" aria-controls="dataTables-example"></label> -->
+                <label><button class="form-control" name="submitdate">Submit</button></label>
+                <label style="margin-left:495px">
+                    <input style="width: 100px; " name="dailydate" id="dailydate" class="datepicker" placeholder="mm/dd/yyyy" data-date-format="mm/dd/yyyy">
+                    <!-- <input id="dailydate" name="dailydate" type="text" placeholder="Due Date" style="width: 150px; margin-bottom: 15px; margin-left: 170px"  /> -->
+                </label>
+                <label><button class="form-control" name="accountduedate">Daily Reports</button></label>
+        </div>
+        </form>
 
-                            <?php
+        <div id="maintable">
+            <div style="margin-top: -19px; margin-bottom: 21px;">
+            </div>
+            <table border="1" cellpadding="5" width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th class="thColor"> Transaction ID </th>
+                        <th> Date </th>
+                        <th> Customer Name </th>
+                        <th> Invoice Number </th>
+                        <th> Overall Balance </th>
+                        <th> Due Date </th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                            if(isset($_POST["submitdate"]))
-                            {
-                                function formatMoney($number, $fractional=false) {
-                                    if ($fractional) {
-                                        $number = sprintf('%.2f', $number);
-                                    }
-                                    while (true) {
-                                        $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
-                                        if ($replaced != $number) {
-                                            $number = $replaced;
-                                        } else {
-                                            break;
-                                        }
-                                    }
-                                    return $number;
-                                }
-                            include('connect.php');
-                            $dmonth=$_POST["dmonth"];
-                            $dyear=$_POST["dyear"];
-                            $c='credit';
-                            $d='paid';
-                            echo'<center><p style="font-size:32px;">';
-                            echo $dmonth.' '.$dyear;
-                            echo'</p></center>';
-                            if(!empty($dmonth) && !empty($dyear) && !empty($dyear)){
-                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND month = '$dmonth' && year = '$dyear' AND balance != '0'");
-                            } else if (!empty($dmonth)){
-                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND month = '$dmonth' AND balance != '0'");  
-                            } else if (!empty($dyear)){
-                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND year = '$dyear' AND balance != '0'");      
-                            } else if (empty($dmonth) && empty($dyear)){
-                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND balance != '0'"); 
-                            } else {
-                                $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND balance != '0'"); 
+                    <?php
+
+                    if (isset($_POST["submitdate"])) {
+                        function formatMoney($number, $fractional = false)
+                        {
+                            if ($fractional) {
+                                $number = sprintf('%.2f', $number);
                             }
+                            while (true) {
+                                $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                                if ($replaced != $number) {
+                                    $number = $replaced;
+                                } else {
+                                    break;
+                                }
+                            }
+                            return $number;
+                        }
+                        include('connect.php');
+                        $dmonth = $_POST["dmonth"];
+                        $dyear = $_POST["dyear"];
+                        $c = 'credit';
+                        $d = 'paid';
+                        echo '<center><p style="font-size:32px;">';
+                        echo $dmonth . ' ' . $dyear;
+                        echo '</p></center>';
+                        if (!empty($dmonth) && !empty($dyear) && !empty($dyear)) {
+                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND month = '$dmonth' && year = '$dyear' AND balance != '0'");
+                        } else if (!empty($dmonth)) {
+                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND month = '$dmonth' AND balance != '0'");
+                        } else if (!empty($dyear)) {
+                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND year = '$dyear' AND balance != '0'");
+                        } else if (empty($dmonth) && empty($dyear)) {
+                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND balance != '0'");
+                        } else {
+                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND balance != '0'");
+                        }
+                        $result->bindParam(':c', $c);
+                        $result->bindParam(':d', $d);
+                        $result->execute();
+                        for ($i = 0; $row = $result->fetch(); $i++) {
+                    ?>
+                            <tr class="record">
+                                <td>STI-000<?php echo $row['transaction_id']; ?></td>
+                                <td><?php echo $row['date']; ?></td>
+                                <td><?php echo $row['name']; ?></td>
+                                <td><?php echo $row['invoice_number']; ?></td>
+                                <td><?php
+                                    $dsdsd = $row['balance'];
+                                    echo formatMoney($dsdsd, true);
+                                    ?></td>
+                                <td><?php echo $row['due_date']; ?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+
+
+                    if (isset($_POST["accountduedate"])) {
+                        function formatMoney($number, $fractional = false)
+                        {
+                            if ($fractional) {
+                                $number = sprintf('%.2f', $number);
+                            }
+                            while (true) {
+                                $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                                if ($replaced != $number) {
+                                    $number = $replaced;
+                                } else {
+                                    break;
+                                }
+                            }
+                            return $number;
+                        }
+                        include('connect.php');
+                        $dyear = $_POST["dyear"];
+                        $dailydate = $_POST['dailydate'];
+                        $cdate = str_replace("-", "/", $dailydate);
+                        $c = 'credit';
+                        $d = 'paid';
+                        echo '<center><p style="font-size:32px;">';
+                        echo $dailydate;
+                        echo '</p></center>';
+                        if (!empty($dailydate)) {
+                            $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND date = '$dailydate'");
                             $result->bindParam(':c', $c);
                             $result->bindParam(':d', $d);
                             $result->execute();
-                            for($i=0; $row = $result->fetch(); $i++){
-                                ?>
+                            for ($i = 0; $row = $result->fetch(); $i++) {
+                            ?>
                                 <tr class="record">
                                     <td>STI-000<?php echo $row['transaction_id']; ?></td>
                                     <td><?php echo $row['date']; ?></td>
                                     <td><?php echo $row['name']; ?></td>
                                     <td><?php echo $row['invoice_number']; ?></td>
                                     <td><?php
-                                        $dsdsd=$row['balance'];
+                                        $dsdsd = $row['balance'];
                                         echo formatMoney($dsdsd, true);
                                         ?></td>
-                                        <td><?php echo $row['due_date']; ?></td>
-                                    </tr>
-                                    <?php
-                                }}
+                                    <td><?php echo $row['due_date']; ?></td>
+                                </tr>
+                    <?php
+                            }
+                        }
+                    }
+                    ?>
 
+                </tbody>
 
-                                if(isset($_POST["accountduedate"]))
-                                {
-                                    function formatMoney($number, $fractional=false) {
-                                        if ($fractional) {
-                                            $number = sprintf('%.2f', $number);
-                                        }
-                                        while (true) {
-                                            $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
-                                            if ($replaced != $number) {
-                                                $number = $replaced;
-                                            } else {
-                                                break;
-                                            }
-                                        }
-                                        return $number;
+                <!-- TOTAL -->
+                <thead>
+                    <tr>
+                        <th colspan="4" style="border-top:1px solid #999999"> Total </th>
+                        <th colspan="3" style="border-top:1px solid #999999">
+                            <?php
+                            if (isset($_POST["submitdate"])) {
+                                $c = 'credit';
+                                if (!empty($dmonth) && !empty($dyear)) {
+                                    $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND month = '$dmonth' AND year = '$dyear'");
+                                    $results->bindParam(':c', $c);
+                                    $results->execute();
+                                    for ($i = 0; $rows = $results->fetch(); $i++) {
+                                        $dsdsd = $rows['sum(balance)'];
+                                        echo formatMoney($dsdsd, true);
                                     }
-                                include('connect.php');
-                                $dyear=$_POST["dyear"];
-                                $dailydate = $_POST['dailydate'];
-                                $cdate = str_replace("-", "/", $dailydate);
-                                $c='credit';
-                                $d='paid';
-                                echo'<center><p style="font-size:32px;">';
-                                echo $dailydate;
-                                echo'</p></center>';
-                                if(!empty($dailydate)){
-                                $result = $db->prepare("SELECT * FROM sales WHERE type=:c AND due_date!= :d AND date = '$dailydate'");
-                                $result->bindParam(':c', $c);
-                                $result->bindParam(':d', $d);
-                                $result->execute();
-                                for($i=0; $row = $result->fetch(); $i++){
-                                    ?>
-                                    <tr class="record">
-                                        <td>STI-000<?php echo $row['transaction_id']; ?></td>
-                                        <td><?php echo $row['date']; ?></td>
-                                        <td><?php echo $row['name']; ?></td>
-                                        <td><?php echo $row['invoice_number']; ?></td>
-                                        <td><?php
-                                            $dsdsd=$row['balance'];
-                                            echo formatMoney($dsdsd, true);
-                                            ?></td>
-                                            <td><?php echo $row['due_date']; ?></td>
-                                        </tr>
-                                        <?php
+                                } else if (!empty($dmonth)) {
+                                    $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND month = '$dmonth' ");
+                                    $results->bindParam(':c', $c);
+                                    $results->execute();
+                                    for ($i = 0; $rows = $results->fetch(); $i++) {
+                                        $dsdsd = $rows['sum(balance)'];
+                                        echo formatMoney($dsdsd, true);
                                     }
+                                } else if (!empty($dyear)) {
+                                    $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND year = '$dyear' ");
+                                    $results->bindParam(':c', $c);
+                                    $results->execute();
+                                    for ($i = 0; $rows = $results->fetch(); $i++) {
+                                        $dsdsd = $rows['sum(balance)'];
+                                        echo formatMoney($dsdsd, true);
+                                    }
+                                } else if (empty($dmonth) && empty($dyear)) {
+                                    $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c");
+                                    $results->bindParam(':c', $c);
+                                    $results->execute();
+                                    for ($i = 0; $rows = $results->fetch(); $i++) {
+                                        $dsdsd = $rows['sum(balance)'];
+                                        echo formatMoney($dsdsd, true);
+                                    }
+                                } else {
+                                    $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c");
+                                    $results->bindParam(':c', $c);
+                                    $results->execute();
+                                    for ($i = 0; $rows = $results->fetch(); $i++) {
+                                        $dsdsd = $rows['sum(balance)'];
+                                        echo formatMoney($dsdsd, true);
                                     }
                                 }
-                                ?>
+                            }
 
-                            </tbody>
+                            if (isset($_POST["accountduedate"])) {
+                                $dailydate = $_POST['dailydate'];
+                                $c = 'credit';
+                                $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND date = '$dailydate'");
+                                $results->bindParam(':c', $c);
+                                $results->execute();
+                                for ($i = 0; $rows = $results->fetch(); $i++) {
+                                    $dsdsd = $rows['sum(balance)'];
+                                    echo formatMoney($dsdsd, true);
+                                }
+                            }
 
-                            <!-- TOTAL -->
-                            <thead>
-                                <tr>
-                                    <th colspan="4" style="border-top:1px solid #999999" > Total </th>
-                                    <th colspan="3" style="border-top:1px solid #999999"> 
-                                        <?php
-                                        if(isset($_POST["submitdate"]))
-                                        {
-                                            $c='credit';
-                                            if(!empty($dmonth) && !empty($dyear)){
-                                                $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND month = '$dmonth' AND year = '$dyear'");
-                                                $results->bindParam(':c', $c);
-                                                $results->execute();
-                                                for($i=0; $rows = $results->fetch(); $i++){
-                                                    $dsdsd=$rows['sum(balance)'];
-                                                    echo formatMoney($dsdsd, true);
-                                                }
-                                            } else if (!empty($dmonth)){
-                                                $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND month = '$dmonth' ");
-                                                $results->bindParam(':c', $c);
-                                                $results->execute();
-                                                for($i=0; $rows = $results->fetch(); $i++){
-                                                    $dsdsd=$rows['sum(balance)'];
-                                                    echo formatMoney($dsdsd, true);
-                                                }
-                                            } else if (!empty($dyear)){
-                                                $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND year = '$dyear' ");
-                                                $results->bindParam(':c', $c);
-                                                $results->execute();
-                                                for($i=0; $rows = $results->fetch(); $i++){
-                                                    $dsdsd=$rows['sum(balance)'];
-                                                    echo formatMoney($dsdsd, true);
-                                                }
-                                            } else if (empty($dmonth) && empty($dyear)){
-                                                $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c");
-                                                $results->bindParam(':c', $c);
-                                                $results->execute();
-                                                for($i=0; $rows = $results->fetch(); $i++){
-                                                    $dsdsd=$rows['sum(balance)'];
-                                                    echo formatMoney($dsdsd, true);
-                                                }
-                                            } else{
-                                                $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c");
-                                                $results->bindParam(':c', $c);
-                                                $results->execute();
-                                                for($i=0; $rows = $results->fetch(); $i++){
-                                                    $dsdsd=$rows['sum(balance)'];
-                                                    echo formatMoney($dsdsd, true);
-                                                }
-                                            }
-                                        }
+                            ?>
+                        </th>
+                    </tr>
+                </thead>
+                <!-- TOTAL -->
 
-                                        if(isset($_POST["accountduedate"])){
-                                            $dailydate = $_POST['dailydate'];
-                                            $c='credit';
-                                            $results = $db->prepare("SELECT sum(balance) FROM sales WHERE type=:c AND date = '$dailydate'");
-                                            $results->bindParam(':c', $c);
-                                            $results->execute();
-                                            for($i=0; $rows = $results->fetch(); $i++){
-                                                $dsdsd=$rows['sum(balance)'];
-                                                echo formatMoney($dsdsd, true);
-                                            }
-                                        }
-
-                                        ?>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <!-- TOTAL -->
-                            
-                        </table>
-                    </div>
-                                        
-                    <a href="" onclick="window.print()" class="btn btn-primary"><i class="icon-print icon-large"></i> Print</a>
-                    <div class="clearfix"></div>
-                    
-                </div>
-
-            </div>
-            <!-- /.container-fluid -->
+            </table>
         </div>
-        <!-- /#page-wrapper -->
+
+        <a href="" onclick="window.print()" class="btn btn-primary"><i class="icon-print icon-large"></i> Print</a>
+        <div class="clearfix"></div>
+
+    </div>
+
+    </div>
+    <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
 
 
-        <!-- jQuery -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
-        <!-- <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script> -->
-        <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-        <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-        <script>
-        
-            $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                    responsive: true
-                });
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script> -->
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                responsive: true
             });
-        </script>
-     
-     
+        });
+    </script>
 
 
 
 
-    </body>
 
-    </html>
+
+</body>
+
+</html>
