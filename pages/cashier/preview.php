@@ -171,6 +171,19 @@ for ($i = 0; $row = $result->fetch(); $i++) {
 							<?php
 							}
 							?>
+							<?php if ($pt == 'cash') {
+							?>
+								<tr>
+									<td colspan="5"><strong style="font-size: 12px; color: #222222;">Cash Tendered:</strong></td>
+									<td colspan="2"><strong style="font-size: 12px; color: #222222;">
+											<?php
+											echo formatMoney($cash, true);
+											?>
+										</strong></td>
+								</tr>
+							<?php
+							}
+							?>
 							<tr>
 
 								<td colspan="5"><strong style="font-size: 12px; color: #222222;">
